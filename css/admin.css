@@ -12,7 +12,7 @@ br{
     line-height: 40px;
 }
 
-.btn-info, .btn-primary{
+.btn-info, .btn-primary, .btn-success{
     width: 50%;
 }
 
