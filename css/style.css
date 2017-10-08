@@ -26,17 +26,7 @@ form{
     font-size: 13px;
 
 }
-
-.form-control{
-    font-size: 13px;
-}
-
-.form-group p{
-    font-size: 12px;
-    line-height: 1px;
-}
-
-.form-group a{
+a{
 	text-decoration: none;
 }
 
