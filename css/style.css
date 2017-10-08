@@ -41,4 +41,6 @@ body{
 .inquiry{
 	border: solid #a2a2a2 1px;
 	background-color: #e7e7e7;
+	font-weight: bolder;
+	padding-top: 2%;
 }
