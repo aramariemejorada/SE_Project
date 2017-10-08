@@ -15,6 +15,7 @@ body{
 #input.container{
 	width: 80%;
 	background-color: white;
+	padding: 0 5%;
 }
 a{
 	text-decoration: none;
@@ -28,9 +29,10 @@ a{
     margin-top: 5%;
 }
 .header{
-	background-color: white;
+	background-color: #c0beff;
 	margin-top: 0;
 	border-bottom: 1px solid #b6b6b6;
+
 }
 .submit-id{
 	margin-top: 5%;
