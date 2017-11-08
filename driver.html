@@ -4,23 +4,87 @@
         <title>Trip Ticket | Driver</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" href="css\admin.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <center><img src="images\logo.png" height="200px" width="170px"></center><br>
-            
-            <div class="buttons">
-                <center>
-                    <button type="button" class="btn btn-info">View</button><br>
-                    <button type="button" class="btn btn-success">Input</button>
-                </center>
-            </div>
+        <div class="panel panel-default">
+          <div class="panel-heading container" style="background-color:white; padding: 20px;">
+            <img src="images\logo-solo.png" style="width:170px;;margin:auto;">
+            <span class="tt">Trip Ticket</span>
+            <span class="logout">Hello,<b> Lorem Ipsum </b>| &nbsp&nbsp<a href="index.html">Log Out</a></span>
+          </div>
+        </div>
 
-            <div class="inquiry">
-                <p align="center">Need help? <a href="#">Click here.</a></p>                
+<!--         <div id="nav" class="container">                
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a data-toggle="tab" href="#input"><span class="glyphicon glyphicon-plus-sign"></span></a></li>
+            <li><a data-toggle="tab" href="#contact"><span class="glyphicon glyphicon glyphicon-earphone"></span></a></li>             
+          </ul>
+        </div> -->
+
+                <div id="tabs" class="tab-content container">
+                    <div id="input" class="tab-pane fade in active">
+                        <form class="form-inline" style="padding:15px;">
+                            <p>Note: All fields are required.</p>
+                            <h3 style="margin-top: 0">Basic Information</h3>
+                                <div class="form-group">
+                                    <input type="id" class="form-control input-id " id="id" placeholder="Vehicle Used">
+                                </div>
+                                <div class="form-group">
+                                    <input type="id" class="form-control input-id " id="id" placeholder="Fuel Used">
+                                </div>
+                                <div class="form-group">
+                                    <input type="id" class="form-control input-id " id="id" placeholder="Balance In Tank">
+                                </div> 
+                                <hr> 
+                            <h3>Destination</h3>
+                                <div class="form-group">
+                                    <input type="id" class="form-control input-id " id="id" placeholder="Place Of Departure">
+                                </div>
+                                <div class="form-group">
+                                    <input type="id" class="form-control input-id " id="id" placeholder="Place of Arrival">
+                                </div>
+                                <div class="form-group">
+                                    <input type="id" class="form-control input-id " id="id" placeholder="Distance Travelled">
+                                </div> 
+                                <hr>
+                             <h3>Additional Information</h3>
+                                 <div class="form-group">
+                                    <label style="display: block;">Purpose</label>
+                                     <textarea class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: block;">Remarks</label>
+                                     <textarea class="form-control"></textarea>
+                                </div> 
+                                <br>
+                                <div id="buttGroup" class="form-group" style="padding-top: 5px;">
+                                    <input type="id" class="form-control input-id " id="id" placeholder="Passengers">
+                                </div>
+                                 <div class="form-group" style="display: block; padding-bottom: 5px;">
+                                     <button id="addButt" type="button" class="btn btn-default">Add Passenger</button>
+                                 </div>
+                                
+                                <div class="form-group" style="display: block;">
+                                    <button type="submit submit-id" class="btn btn-primary" style="min-width:150px;">Submit</button> 
+                                </div>
+
+                        </form> 
+                    </div>  
+            </div>
+                
+               
+           <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default inquiry">
+                    <div class="panel-body help-panel">
+                        Need help? <a href="#">Click here.</a>
+                    </div>
+                </div>
             </div>
         </div>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css\style.css" type="text/css" rel="stylesheet">
+        <script src="driver.js"></script>
     </body>
 </html>
