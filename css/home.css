@@ -11,7 +11,11 @@ body{
     margin-bottom: 2%;
 }
 h2{
+<<<<<<< HEAD
     color: #17468f;
+=======
+    color: #333391;
+>>>>>>> 18b27f391f8ae4e61cca677b8297e7a5b8d53e10
     font-weight: bold;
     margin-top: 2%;
 }
