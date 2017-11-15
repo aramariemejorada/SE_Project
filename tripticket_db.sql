@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2017 at 01:23 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Generation Time: Nov 15, 2017 at 05:40 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -36,6 +34,13 @@ CREATE TABLE `administrator` (
   `PASSWORD` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `administrator`
+--
+
+INSERT INTO `administrator` (`admin_id`, `PASSWORD`) VALUES
+('Admin', '$2y$10$uAc4bziIg.LU4DDIRxsYYOQV1rK47l6k77USSNON.ygtqVgwwFQ9W');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +54,17 @@ CREATE TABLE `driver` (
   `lastname` varchar(20) DEFAULT NULL,
   `PASSWORD` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `driver`
+--
+
+INSERT INTO `driver` (`driver_id`, `firstname`, `lastname`, `PASSWORD`) VALUES
+('a', NULL, NULL, '$2y$10$tHqGY8LvQP0COZtb8St4JeqjisXB2qdq4dHbwXsSYyKb48Q297mJ.'),
+('b', 'b', 'b', '$2y$10$N4YCiQYxOEzWpbd/2aDE6.tnEVNwZdHZ6D09epgruCZJIAGoXxzq6'),
+('c', 'c', 'c', '$2y$10$nDmrppIqDTPlUWoqZ35ITuointwEG.JMWkTujvFVt.b3BbCah0udq'),
+('d', 'd', 'd', '$2y$10$BHX/12gaDGVTYq5hHlH6G.T3.Te1QUCX50AfWBfHE2r2M8OisNAA2'),
+('z', 'z', 'z', '$2y$10$J7Hz0HshJ4L85YNIlo4zX.eP.lEfDvWeQ2wjPGXM9/HlhAQO9pzlC');
 
 -- --------------------------------------------------------
 
@@ -139,7 +155,6 @@ ALTER TABLE `trip`
 --
 ALTER TABLE `vehicle`
   ADD PRIMARY KEY (`license_plate`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

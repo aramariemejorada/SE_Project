@@ -18,21 +18,24 @@
                             <h2>TRIP TICKET</h2>
                         </center>
                     </div>
-
+                <form action="php/login.inc.php" method="POST">
                     <div id="form" class="col-sm-4">
-                        <div class="form-group">
-                            <label>Employee ID</label>
-                            <input type="id" class="form-control input-id " id="id" name="employeeID" placeholder="Enter ID">
-                            <label>Password</label>
-                            <input type="password" class="form-control input-id " id="id" name="password" placeholder="Password">
-                            <button type="submit submit-id" class="btn btn-primary btn-block">Submit</button>
-                        </div>
+                            <div id="username" class="form-group">
+								<label for="name">Employee ID</label>
+						            <input type="text" name="empid" class="form-control" id="name" placeholder="Enter username" required="required" />
+						    </div>
+                            <div id="pass" class="form-group">
+								<label for="name">Password</label>
+						            <input type="password" name="passw" class="form-control" id="name" placeholder="Enter password" required="required" />
+						    </div> 
+						    <button type="submit submit-id" name ="submit" class="btn btn-primary btn-block">Log In</button>
                         <div class="panel panel-default inquiry">
                             <div class="panel-body help-panel">
                                 Doesn't have an account? <a data-toggle="modal" data-target="#signup">Sign-up</a>
                             </div>
-                        </div>
-                    </div>
+                        	</div>
+                 	   </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -44,44 +47,33 @@
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h3 class="modal-title" style="font-weight: bold"><center>Sign up</center></h3>
                         </div>
-                       <form action = "php/signup.inc.php" method = "POST">
-					        	    <div class="row">
-					                    <div class="col-lg-6">
-					                    	 <div class="form-group">
-					                            <label for="name">
-					                                Last name</label>
-					                            <input type="text" class="form-control" name = "lastName" placeholder="Enter last name" required="required" />
-					                        </div>
-					                         <div class="form-group">
-					                            <label for="name">
-					                                First name</label>
-					                            <input type="text" class="form-control" name = "firstName" placeholder="Enter first name" required="required" />
-					                        </div>
-					                   		 </div>
-					                   		<div class="col-lg-6">
-					                    	<div class="form-group">
-					                    	    <label for="name">
-					                    	        Username</label>
-					                    	    <input type="text" class="form-control" name = "empid" placeholder="Enter username" required="required" />
-					                    	</div>
-					                    	 <div class="form-group">
-					                    	    <label for="name">
-					                    	        Password</label>
-					                    	    <input type="password" class="form-control" name = "password" placeholder="Enter password" required="required" />
-					                    	</div>
-					                    	<div class="form-group">
-					                    	    <label for="name">
-					                    	        Confirm Password</label>
-					                    	    <input type="password" class="form-control" name = "passwordcon" placeholder="Re-enter password" required="required" />
-					                    	</div>
-					                    </div>
-					                    <center>
-						                    <div class="col-lg-12">
-						                        <button type="submit" name ="submit" class="btn btn-primary" id="btnContactUs" style="width:20em">Sign Up</button>
-						                    </div>
-					                    </center>
-					                </div>
-					            </form>
+                        <form action = "php/signup.inc.php" method = "POST" style="max-width:250px">
+	                                <div class="form-group">
+					                <label for="name">First name</label>
+					                 	<input type="text" class="form-control" name = "firstName" placeholder="Enter first name" required="required" />
+					           		</div>
+	                             <div class="form-group">
+					                <label for="name">Last name</label>
+					                 	<input type="text" class="form-control" name = "lastName" placeholder="Enter first name" required="required" />
+					           		</div>
+                                 <div class="form-group">
+					                <label for="name">Employee ID</label>
+					                 	<input type="text" class="form-control" name = "empid" placeholder="Enter Employee ID" required="required" />
+					           		</div>
+                                 <div class="form-group">
+					                <label for="name">Password</label>
+					                 	<input type="password" class="form-control" name = "password" placeholder="Enter password name" required="required" />
+					           		</div>
+                                 <div class="form-group">
+					                <label for="name">Re-Enter Password</label>
+					                 	<input type="password" class="form-control" name = "passwordcon" placeholder="Re-enter password" required="required" />
+					           		</div>
+                             <center>
+                                 <div class="col-lg-12">
+                                     <button type="submit" name ="submit" class="btn btn-primary" id="btnContactUs">Sign Up</button>
+                                 </div>
+                             </center>
+                        </form>
                     </div>
                 </div>
             </div>
