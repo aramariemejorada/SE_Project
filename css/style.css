@@ -27,6 +27,9 @@ hr{
     margin-right: auto;
     max-width: 75%;
 }
+#sel1{
+	max-width: 150px;
+}
 #tabs{
 	background-color: white;
 	/*padding: 1em;*/
