@@ -22,11 +22,9 @@
                     <div id="form" class="col-sm-4">
                             <div id="username" class="form-group">
 								<label for="name">Employee ID</label>
-						            <input type="text" name="empid" class="form-control" id="name" placeholder="Enter username" required="required" />
-						    </div>
-                            <div id="pass" class="form-group">
-								<label for="name">Password</label>
-						            <input type="password" name="passw" class="form-control" id="name" placeholder="Enter password" required="required" />
+						        <input type="text" name="empid" class="form-control" id="name" placeholder="Enter username" required="required" />
+								<label for="name" style="margin-top: 10px">Password</label>
+						        <input type="password" name="passw" class="form-control" id="name" placeholder="Enter password" required="required" />
 						    </div> 
 						    <button type="submit submit-id" name ="submit" class="btn btn-primary btn-block">Log In</button>
                         <div class="panel panel-default inquiry">
@@ -48,31 +46,23 @@
                             <h3 class="modal-title" style="font-weight: bold"><center>Sign up</center></h3>
                         </div>
                         <form action = "php/signup.inc.php" method = "POST" style="max-width:250px">
-	                                <div class="form-group">
-					                <label for="name">First name</label>
-					                 	<input type="text" class="form-control" name = "firstName" placeholder="Enter first name" required="required" />
-					           		</div>
-	                             <div class="form-group">
-					                <label for="name">Last name</label>
-					                 	<input type="text" class="form-control" name = "lastName" placeholder="Enter first name" required="required" />
-					           		</div>
-                                 <div class="form-group">
-					                <label for="name">Employee ID</label>
-					                 	<input type="text" class="form-control" name = "empid" placeholder="Enter Employee ID" required="required" />
-					           		</div>
-                                 <div class="form-group">
-					                <label for="name">Password</label>
-					                 	<input type="password" class="form-control" name = "password" placeholder="Enter password name" required="required" />
-					           		</div>
-                                 <div class="form-group">
-					                <label for="name">Re-Enter Password</label>
-					                 	<input type="password" class="form-control" name = "passwordcon" placeholder="Re-enter password" required="required" />
-					           		</div>
-                             <center>
-                                 <div class="col-lg-12">
-                                     <button type="submit" name ="submit" class="btn btn-primary" id="btnContactUs">Sign Up</button>
-                                 </div>
-                             </center>
+	                        <div class="form-group">
+					            <label for="name">First name</label>
+					            <input type="text" class="form-control" name = "firstName" placeholder="Enter first name" required="required" />
+					           	<label for="name" style="margin-top: 10px">Last name</label>
+					            <input type="text" class="form-control" name = "lastName" placeholder="Enter first name" required="required" />
+					           	<label for="name" style="margin-top: 10px">Employee ID</label>
+					            <input type="text" class="form-control" name = "empid" placeholder="Enter Employee ID" required="required" />
+					           	<label for="name" style="margin-top: 10px">Password</label>
+					            <input type="password" class="form-control" name = "password" placeholder="Enter password name" required="required" />
+					           	<label for="name" style="margin-top: 10px">Re-Enter Password</label>
+					            <input type="password" class="form-control" name = "passwordcon" placeholder="Re-enter password" required="required" />
+					        </div>
+                            <center>
+                                <div class="col-lg-12">
+                                    <button type="submit" name ="submit" class="btn btn-primary" id="btnContactUs">Sign Up</button>
+                                </div>
+                            </center>
                         </form>
                     </div>
                 </div>
