@@ -15,22 +15,78 @@
             <span class="logout">Hello,<b> Lorem Ipsum </b>| &nbsp&nbsp<a href="index.html">Log Out</a></span>
           </div>
         </div>
-            <div id="tabs" class="tab-content container">
-                <div id="view" class="tab-pane fade in active">
-                    <div class="container">
-                        <center>
-                            <div class="input-group"  style="padding:10em 1em 10em 1em; max-width: 370px;">
-                                <input type="text" class="form-control" placeholder="Driver ID or License Plate">
-                                    <span class="input-group-btn">
-                                         <button  class="btn btn-default" type="button">Search</button>
-                                    </span>
-                            </div> 
-                        </center> 
+        <div class="container">
+            <ul class="nav nav-tabs" style="margin-left: 10px">
+                <li class="active"><a data-toggle="tab" href="#search">Search</a></li>
+                <li><a data-toggle="tab" href="#input">Input</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="search" class="tab-pane fade in active">
+                    <div id="tabs" class="tab-content container" style="border-radius: 5px">
+                        <div id="view" class="tab-pane fade in active">
+                            <div class="container">
+                                <center>
+                                    <div class="input-group"  style="padding-top: 50px; max-width: 370px;">
+                                        <input type="text" class="form-control" placeholder="Driver ID/License Plate/Vehicle Type">
+                                        <span class="input-group-btn">
+                                            <button  class="btn btn-default" type="button">Search</button>
+                                        </span>
+                                    </div>
+                                    <div class="btn-group" style="margin-bottom: 50px;">
+                                        <button type="button" class="btn btn-primary" style="min-width:150px; margin-top: 10px;">Print Official Travel Report</button>
+                                        <button type="button" class="btn btn-success" style="min-width:150px; margin-top: 10px;">Print Fuel Consumption Report</button> 
+                                    </div>
+                                </center> 
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div id="input" class="tab-pane fade">
+                    <div id="tabs" class="tab-content container" style="border-radius: 5px">
+                        <div id="view" class="tab-pane fade in active">
+                            <div class="container">
+                                <form class="form-inline" style="padding:15px;">
+                                    <p style="font-weight: bold">Note: All fields are required.</p>
+                                    <h3 style="margin-top: 0">Basic Information</h3>
+                                    <div class="form-group">
+                                        <label style="margin-left: 10px">Date</label>
+                                        <input type="date" class="form-control input-id" name="date">
+                                        <label style="margin-left: 10px">Time of Departure</label>
+                                        <input type="time" class="form-control input-id" name="timeOfDepart" style="max-width: 100px">
+                                        <label style="margin-left: 10px">Time of Arrival</label>
+                                        <input type="time" class="form-control input-id" name="timeOfArrival" style="max-width: 100px">
+                                        <label style="margin-left: 10px">Vehicle Used</label>
+                                        <input type="text" class="form-control input-id" name="plateNo" placeholder="Plate No." style="max-width: 120px">
+                                    </div>
+                                    <hr>
+                                    <h3>Fuel Consumption</h3>
+                                    <div class="form-group">
+                                        <label style="margin-left: 10px">Balance in tank</label>
+                                        <input type="number" class="form-control input-id" name="balance" placeholder="ltrs." style="max-width: 80px">
+                                        <label style="margin-left: 10px">Purchased outside</label>
+                                        <input type="number" class="form-control input-id" name="purchased" placeholder="ltrs." style="max-width: 80px">
+                                        <label style="margin-left: 10px">Fuel Used</label>
+                                        <input type="number" class="form-control input-id" name="fuelUsed" placeholder="ltrs." style="max-width: 80px">                                
+                                    </div>
+                                    <hr>
+                                    <h3>Destination</h3>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-id" name="departure" placeholder="Place Of Departure">
+                                        <input type="text" class="form-control input-id" name="arrival" placeholder="Place of Arrival">
+                                        <label style="margin-left: 10px;">Distance travelled</label>
+                                        <input type="number" class="form-control input-id" name="distanceTravelled" placeholder="km." style="max-width: 80px">
+                                    </div><br>
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary" style="min-width:150px; margin-top: 10px;" data-toggle="modal" data-target="#submit">Submit</button> 
+                                    </div>
+                                </form>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
-    </div>   
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default inquiry">
                 <div class="panel-body help-panel">
@@ -39,9 +95,32 @@
             </div>
         </div>
     </div>
+    <div id="submit" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-lg" role="document" style="max-width: 300px">
+                <div class="modal-content">
+                    <div class="container-fluid signup">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <form action = "" method = "POST" style="max-width:250px">
+                            <div class="form-group">
+                                <label for="name">Employee ID/Name</label>
+                                <input type="id" class="form-control" name = "idOrName" placeholder="Enter ID/Name" required="required" />
+                            </div>
+                            <center>
+                                <div class="col-lg-12">
+                                    <button type="submit" name ="confirm" class="btn btn-primary" style="margin-bottom: 20px">Confirm</button>
+                                </div>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css\style.css" type="text/css" rel="stylesheet">
     <script src="admin.js"></script>
     </body>
 </html>
+

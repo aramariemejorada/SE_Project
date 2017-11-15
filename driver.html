@@ -19,35 +19,48 @@
             <div id="input" class="tab-pane fade in active">
                 <form class="form-inline" style="padding:15px;">
                     <p style="font-weight: bold">Note: All fields are required.</p>
-                        <h3 style="margin-top: 0">Basic Information</h3>
-                            <div class="form-group">
-                                <input type="id" class="form-control input-id " id="id" placeholder="Vehicle Used">
-                                <input type="id" class="form-control input-id " id="id" placeholder="Balance In Tank">
-                                <input type="id" class="form-control input-id " id="id" placeholder="Purchased Outside">
-                                <input type="id" class="form-control input-id " id="id" placeholder="Fuel Used">                                
-                            </div>
-                            <hr>
-                            <h3>Destination</h3>
-                                <div class="form-group">
-                                    <input type="id" class="form-control input-id " id="id" placeholder="Place Of Departure">
-                                    <input type="id" class="form-control input-id " id="id" placeholder="Place of Arrival">
-                                    <input type="id" class="form-control input-id " id="id" placeholder="Distance Travelled">
-                                </div><br>
-                                <div class="form-group">
-                                    <button type="submit submit-id" class="btn btn-primary" style="min-width:150px; margin-top: 10px;" onclick="confirm()">Submit</button> 
-                                </div>
-                        </form> 
-                    </div>                
-            </div>
-           <div class="col-md-4 col-md-offset-4">
-                <div class="panel panel-default inquiry">
-                    <div class="panel-body help-panel">
-                        Need help? <a href="#">Click here.</a>
+                    <h3 style="margin-top: 0">Basic Information</h3>
+                    <div class="form-group">
+                        <label style="margin-left: 10px">Date</label>
+                        <input type="date" class="form-control input-id" name="date">
+                        <label style="margin-left: 10px">Time of Departure</label>
+                        <input type="time" class="form-control input-id" name="timeOfDepart" style="max-width: 100px">
+                        <label style="margin-left: 10px">Time of Arrival</label>
+                        <input type="time" class="form-control input-id" name="timeOfArrival" style="max-width: 100px">
+                        <label style="margin-left: 10px">Vehicle Used</label>
+                        <input type="text" class="form-control input-id" name="plateNo" placeholder="Plate No." style="max-width: 120px">
                     </div>
+                    <hr>
+                    <h3>Fuel Consumption</h3>
+                    <div class="form-group">
+                        <label style="margin-left: 10px">Balance in tank</label>
+                        <input type="number" class="form-control input-id" name="balance" placeholder="ltrs." style="max-width: 80px">
+                        <label style="margin-left: 10px">Purchased outside</label>
+                        <input type="number" class="form-control input-id" name="purchased" placeholder="ltrs." style="max-width: 80px">
+                        <label style="margin-left: 10px">Fuel Used</label>
+                        <input type="number" class="form-control input-id" name="fuelUsed" placeholder="ltrs." style="max-width: 80px">                                
+                    </div>
+                    <hr>
+                    <h3>Destination</h3>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-id" name="departure" placeholder="Place Of Departure">
+                        <input type="text" class="form-control input-id" name="arrival" placeholder="Place of Arrival">
+                        <label style="margin-left: 10px;">Distance travelled</label>
+                        <input type="number" class="form-control input-id" name="distanceTravelled" placeholder="km." style="max-width: 80px">
+                    </div><br>
+                    <div class="form-group">
+                        <button type="submit submit-id" class="btn btn-primary" style="min-width:150px; margin-top: 10px;" onclick="confirm()">Submit</button> 
+                    </div>
+                </form> 
+            </div>                
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default inquiry">
+                <div class="panel-body help-panel">
+                    Need help? <a href="#">Click here.</a>
                 </div>
             </div>
-        </div>
-        
+        </div>        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css\style.css" type="text/css" rel="stylesheet">
