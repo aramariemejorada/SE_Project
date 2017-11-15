@@ -11,6 +11,9 @@ p{
 h1, h2, h3, h4, h5, h6{
 	color: #204d94;
 }
+hr{
+	margin-bottom: 0;
+}
 .tt{
 	color: #214e94;
     font-size: 20px;
@@ -26,10 +29,7 @@ h1, h2, h3, h4, h5, h6{
 }
 #tabs{
 	background-color: white;
-<<<<<<< HEAD
-	padding: 1em;
-=======
->>>>>>> 18b27f391f8ae4e61cca677b8297e7a5b8d53e10
+	/*padding: 1em;*/
 }
 #id.container{
 	margin-top: none;
@@ -70,7 +70,6 @@ h1, h2, h3, h4, h5, h6{
 
 .input-id{
 	display: block;
-	margin-bottom: 5%
 }
 .inquiry{
 	border: solid #a2a2a2 1px;
