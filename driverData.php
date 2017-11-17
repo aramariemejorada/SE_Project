@@ -19,25 +19,26 @@
                     <div id="tabs" class="tab-content container" style="border-radius: 5px">
                         <div id="view" class="tab-pane fade in active">
                             <?php include 'searchbar.php' ?>
-                        <span class="logout">
-                            <?php include 'printButtons.php' ?>
-                        </span> 
-                        <div class="container">
-                            <div class="btn-group btn-group-justified" style="display: inline-block">
-                                <a href="#" class="btn btn-default">Weekly</button></a>
-                                <a href="#" class="btn btn-default">Monthly</button></a>
-                                <a href="#" class="btn btn-default">Yearly</button></a>
-                            </div>
-                            <hr>
-                            <h2>Yearly Report</h2>
-                            <h4>Leo Manansala | ID: 256-ABC-4A
                             <span class="logout">
-                                <?php include 'monthPicker.php' ?>
-                            </span></h4>
-                            <hr>
-                            <table id="table" class="table table-hover">
-                                <?php include 'driverTable.php' ?>
-                            </table>
+                                <?php include 'printButtons.php' ?>
+                            </span> 
+                            <div class="container">
+                                <div class="btn-group btn-group-justified" style="display: inline-block">
+                                    <a href="#" class="btn btn-default">Weekly</button></a>
+                                    <a href="#" class="btn btn-default">Monthly</button></a>
+                                    <a href="#" class="btn btn-default">Yearly</button></a>
+                                </div>
+                                <hr>
+                                <h2>Yearly Report</h2>
+                                <h4>Leo Manansala | ID: 256-ABC-4A
+                                <span class="logout">
+                                    <?php include 'monthPicker.php' ?>
+                                </span></h4>
+                                <hr>
+                                <table id="table" class="table table-hover">
+                                    <?php include 'driverTable.php' ?>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div id="input" class="tab-pane fade">

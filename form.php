@@ -1,16 +1,22 @@
 <?php
     echo '<div id="tabs" class="tab-content container">
         <div id="input" class="tab-pane fade in active">
-            <form class="form-inline" style="padding:15px;">
+            <form class="form-inline" action="php/form.inc.php" method="POST" style="padding:15px;">
                 <p style="font-weight: bold">Note: All fields are required.</p>
                 <h3 style="margin-top: 0">Basic Information</h3>                    
                 <div class="form-group">
-                    <input type="date" class="form-control input-id" name="date">  
+                    <input type="date" class="form-control input-id" name="dateDepart">  
                     <small class="form-text text-muted" style="display: block">
-                        Date of Travel
+                        Departure Date of Travel
                     </small>
                 </div>
                 <span>
+                    <div class="form-group">
+                        <input type="date" class="form-control input-id" name="dateArrive">  
+                        <small class="form-text text-muted" style="display: block">
+                            Arrival Date of Travel
+                        </small>
+                    </div>
                     <div class="form-group">
                         <input type="text" class="form-control input-id" name="plateNo" placeholder="Plate No.">
                         <small class="form-text text-muted" style="display: block">
@@ -76,7 +82,7 @@
                 </span>
                 <br>
                 <div class="form-group">
-                    <button type="submit submit-id" class="btn btn-primary" style="min-width:150px; margin-top: 10px;">Submit</button> 
+                    <button type="submit" class="btn btn-primary" name="submit" style="min-width:150px; margin-top: 10px;">Submit</button> 
                 </div>
             </form> 
         </div>                
