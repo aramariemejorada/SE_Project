@@ -27,45 +27,6 @@
         <td>4.85</td>
         <td>-----</td>
         <td>Repair, refuel,etc.</td>
-        </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td>2.597</td>
-        <td>4.026</td>
-        <td>340</td>
-        <td>48.571</td>
-        <td>7</td>
-        <td>7</td>
-        <td>4.85</td>
-        <td>-----</td>
-        <td>Repair, refuel,etc.</td>
-        </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td>2.597</td>
-        <td>4.026</td>
-        <td>340</td>
-        <td>48.571</td>
-        <td>7</td>
-        <td>7</td>
-        <td>4.85</td>
-        <td>-----</td>
-        <td>Repair, refuel,etc.</td>
-        </tr>
-        <tr>
-        <td>UAD 547</td>
-        <td>4</td>
-        <td>2.597</td>
-        <td>4.026</td>
-        <td>340</td>
-        <td>48.571</td>
-        <td>7</td>
-        <td>7</td>
-        <td>4.85</td>
-        <td>-----</td>
-        <td>Repair, refuel,etc.</td>
-        </tr>           
+        </tr>   
     </tbody>'
 ?>

@@ -1,38 +1,24 @@
 <?php 
     echo '<thead>
         <tr>
-        <th>Date</th>
         <th>Vehicle Used</th>
-        <th>Fuel Used</th>
-        <th>Balance in Tank</th>
-        <th>Distance Travelled</th>
-        <th>Remarks</th>
+        <th>Date</th>
+        <th>Time of Departure</th>
+        <th>Place of Departure</th>
+        <th>Time of Arrival</th>
+        <th>Place of Arrival</th>
+        <th>Odometer Reading</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-        <td>2017/08/15</td>
         <td>GSR-541</td>
-        <td>6 Liters</td>
-        <td>2.2 Liters</td>
-        <td>8.2 Kilometers</td>
-        <td>Repair, refuel, etc.</td>
-        </tr>
-        <tr>
         <td>2017/08/15</td>
-        <td>GSR-541</td>
-        <td>6 Liters</td>
-        <td>2.2 Liters</td>
-        <td>8.2 Kilometers</td>
-        <td>-----</td>
-        </tr>
-        <tr>
-        <td>2017/08/15</td>
-        <td>GSR-541</td>
-        <td>6 Liters</td>
-        <td>2.2 Liters</td>
-        <td>8.2 Kilometers</td>
-        <td>Repair, refuel, etc.</td>
+        <td>08:00 a.m.</td>
+        <td>DICT</td>
+        <td>09:00 p.m.</td>
+        <td>People\'s Park</td>
+        <td>OUT OF ORDER</td>
         </tr>
     </tbody>'
 ?>
