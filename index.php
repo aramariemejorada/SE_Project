@@ -50,7 +50,7 @@
 					            <label for="name">First name</label>
 					            <input type="text" class="form-control" name = "firstName" placeholder="Enter first name" required="required" />
 					           	<label for="name" style="margin-top: 10px">Last name</label>
-					            <input type="text" class="form-control" name = "lastName" placeholder="Enter first name" required="required" />
+					            <input type="text" class="form-control" name = "lastName" placeholder="Enter last name" required="required" />
 					           	<label for="name" style="margin-top: 10px">Employee ID</label>
 					            <input type="text" class="form-control" name = "empid" placeholder="Enter Employee ID" required="required" />
 					           	<label for="name" style="margin-top: 10px">Password</label>

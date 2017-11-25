@@ -9,49 +9,51 @@
         <link rel="stylesheet" href="css\style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <?php include 'header.php' ?>
         <div class="container">
-            <ul class="nav nav-tabs" style="margin-left: 10px">
-                <li class="active"><a data-toggle="tab" href="#search">Search</a></li>
-                <li><a data-toggle="tab" href="#input">Input</a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="search" class="tab-pane fade in active">
-                    <div id="tabs" class="tab-content container" style="border-radius: 5px">
-                        <div id="view" class="tab-pane fade in active">
-                            <?php include 'searchbar.php' ?>
-                            <span class="logout">
-                                <?php include 'printButtons.php' ?>
-                            </span> 
-                            <div class="container">
-                                <div class="btn-group btn-group-justified" style="display: inline-block">
-                                    <a href="#" class="btn btn-default">Weekly</button></a>
-                                    <a href="#" class="btn btn-default">Monthly</button></a>
-                                    <a href="#" class="btn btn-default">Yearly</button></a>
-                                </div>
-                                <hr>
-                                <h2>Yearly Report</h2>
-                                <h4>Leo Manansala | ID: 256-ABC-4A
-                                <span class="logout">
-                                    <?php include 'monthPicker.php' ?>
-                                </span></h4>
-                                <hr>
-                                <div class="container" style="overflow: auto">
-                                    <table id="table" class="table table-hover">
-                                        <?php include 'driverTable.php' ?>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <h2>Weekly Report</h2>
+            <h4>Leo Manansala | ID: 256-ABC-4A
+            <span class="logout">
+                <div class="form-group" style="display: inline-block">
+                    <select class="form-control" id="month">
+                        <option default>---Select Month---</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
                 </div>
-                <div id="input" class="tab-pane fade">
-                    <?php include 'form.php' ?>     
+                <div class="form-group" style="display: inline-block">
+                    <select class="form-control" id="year">
+                        <option default>---Select Year---</option>
+                        <option value="1">2018</option>
+                        <option value="2">2019</option>
+                        <option value="3">2020</option>
+                        <option value="4">2021</option>
+                        <option value="5">2022</option>
+                        <option value="6">2023</option>
+                        <option value="7">2024</option>
+                        <option value="8">2025</option>
+                        <option value="9">2026</option>
+                        <option value="10">2027</option>
+                        <option value="11">2028</option>
+                        <option value="12">2029</option>
+                    </select>
                 </div>
-            </div> 
+            </span></h4>
+            <hr>
+            <div class="container table-responsive" style="padding-left: 0">
+                <table id="table" class="table table-hover"> <!-- for bordered table add table-bordered in class -->
+                    <?php include 'includes\driverTable.php' ?>
+                </table>
+            </div>
         </div>
-        <?php include 'help.php' ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
