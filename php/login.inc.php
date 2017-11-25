@@ -16,7 +16,7 @@ session_start();
         exit();    
     
     }else{
-       $sql = "SELECT * FROM driver WHERE driver_id ='$username'";
+       $sql = "SELECT * FROM tripticketdb_employee WHERE name ='$username'";
        $result = mysqli_query($conn, $sql); 
        $resultCheck = mysqli_num_rows($result);
 
