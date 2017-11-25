@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 				}else{
 					$hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
 					//Insert the user to db
-					$sql = "INSERT INTO driver (firstname, lastname, driver_id, PASSWORD) VALUES ('$firstName', '$lastName', '$empid', '$hashedPwd');";
+					$sql = "INSERT INTO driver (empid, name, password) VALUES ('$empid', '$firstName', '$hashedPwd');";
 					mysqli_query($conn, $sql);
 					header("Location: ../index.php?signup=success");
 					exit();
@@ -53,3 +53,4 @@ if (isset($_POST['submit'])) {
 	header("Location: ../index.php");
 	exit();
 }
+?>
