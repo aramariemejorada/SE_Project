@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2017 at 09:22 AM
+-- Generation Time: Nov 26, 2017 at 05:53 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -33,7 +33,9 @@ USE `tripticket_db`;
 DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
   `emp_id` int(11) NOT NULL,
-  `name` varchar(70) DEFAULT NULL,
+  `lastname` varchar(35) NOT NULL,
+  `firstname` varchar(35) DEFAULT NULL,
+  `middlename` varchar(35) NOT NULL,
   `password` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
