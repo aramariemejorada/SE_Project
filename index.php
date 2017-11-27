@@ -70,26 +70,28 @@
                                 <span>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Password</medium>
-                                        <input type="text" class="form-control" name = "middleName" placeholder="Enter password" required="required" />
+                                        <input type="password" class="form-control" name = "password" placeholder="Enter password" required="required" />
                                     </div>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Re-enter password</medium>
-                                        <input type="text" class="form-control" name = "middleName" placeholder="Re-enter password" required="required" />
+                                        <input type="password" class="form-control" name = "passwordcon" placeholder="Re-enter password" required="required" />
                                     </div>
                                 </span>
+                                <br>
                                 <label class="radio-inline">
                                     <input type="radio" name="admin">Admin
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="driver">Driver
                                 </label>
+                                <center>
+                                    <div class="col-lg-12">
+                                        <button type="submit" name ="submit" class="btn btn-primary" id="btnContactUs">Sign Up</button>
+                                    </div>
+                                </center>
                             </form>
                         </div>
-                        <center>
-                            <div class="col-lg-12">
-                                <button type="submit" name ="submit" class="btn btn-primary" id="btnContactUs">Sign Up</button>
-                            </div>
-                        </center>
+                        
                     </div>
                 </div>
             </div>
