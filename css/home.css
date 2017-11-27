@@ -1,11 +1,11 @@
 body{
     background-color: #e7e7e7;
 }
-.container-fluid{
+.home{
     margin-top: 50px;
     margin-bottom: 50px;
 }
-.container{
+.con{
     max-width: 900px;
 }
 .img-responsive{
@@ -19,7 +19,7 @@ h2{
 #dict{
     max-width: 500px;
 }
-.form-group{
+.login{
     background: rgba(255, 255, 255, .7);
     border-radius: 10px;
     padding: 20px;
@@ -42,4 +42,7 @@ h2{
 	margin-top: 5%;
 	margin-left: auto;
     margin-right: auto;
+}
+#input{
+    padding: 5px;
 }
