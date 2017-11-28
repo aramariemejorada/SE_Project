@@ -72,7 +72,7 @@
                                         <medium class="form-text" style="display: block; font-weight:bold">Password</medium>
                                         <input type="password" class="form-control" name = "password" placeholder="Enter password" required="required" />
                                     </div>
-                                    <div class="form-group" style=" " le="padding: 2px; padding-bottom: 10px;">
+                                    <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Re-enter password</medium>
                                         <input type="password" class="form-control" name = "passwordcon" placeholder="Re-enter password" required="required" />
                                     </div>
