@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2017 at 12:20 PM
+-- Generation Time: Nov 28, 2017 at 09:19 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -50,10 +50,10 @@ DROP TABLE IF EXISTS `fuel_consumption`;
 CREATE TABLE `fuel_consumption` (
   `trip_ticket_date` varchar(70) DEFAULT NULL,
   `fuel_consumption_date` varchar(70) NOT NULL,
-  `distance_travelled_per_ltr` int(11) DEFAULT NULL,
-  `normal_travel` int(11) DEFAULT NULL,
-  `total_liters_consumed` int(11) DEFAULT NULL,
-  `excess` int(11) DEFAULT NULL,
+  `distance_travelled_per_ltr` float DEFAULT NULL,
+  `normal_travel` float DEFAULT NULL,
+  `total_liters_consumed` float DEFAULT NULL,
+  `excess` float DEFAULT NULL,
   `remarks` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -102,15 +102,15 @@ CREATE TABLE `trip_ticket` (
   `destination` varchar(255) DEFAULT NULL,
   `purpose` varchar(255) DEFAULT NULL,
   `trip_info_id` int(11) DEFAULT NULL,
-  `balance_in_tank` int(11) DEFAULT NULL,
-  `issued_from_stock` int(11) DEFAULT NULL,
-  `purchase_outside` int(11) DEFAULT NULL,
-  `gas_used` int(11) DEFAULT NULL,
-  `final_balance` int(11) DEFAULT NULL,
-  `total_kms_travelled` int(11) DEFAULT NULL,
-  `gear_oil_used` int(11) DEFAULT NULL,
-  `lubricant_oil_used` int(11) DEFAULT NULL,
-  `grease_used` int(11) DEFAULT NULL
+  `balance_in_tank` float DEFAULT NULL,
+  `issued_from_stock` float DEFAULT NULL,
+  `purchase_outside` float DEFAULT NULL,
+  `gas_used` float DEFAULT NULL,
+  `final_balance` float DEFAULT NULL,
+  `total_kms_travelled` float DEFAULT NULL,
+  `gear_oil_used` float DEFAULT NULL,
+  `lubricant_oil_used` float DEFAULT NULL,
+  `grease_used` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
