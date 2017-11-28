@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="css\home.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div class="container-fluid" id="home">
-            <div class="container" id="con">
+        <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div id="dict" class="col-sm-8">
                         <center>
