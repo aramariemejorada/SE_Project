@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2017 at 05:16 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Generation Time: Nov 28, 2017 at 07:52 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -76,7 +78,8 @@ CREATE TABLE `official_travel` (
 
 DROP TABLE IF EXISTS `trip_info`;
 CREATE TABLE `trip_info` (
-  `trip_date` date NOT NULL,
+  `trip_info_id` int(11) NOT NULL,
+  `trip_date` date DEFAULT NULL,
   `depart_time` time DEFAULT NULL,
   `depart_place` varchar(255) DEFAULT NULL,
   `arrive_time` time DEFAULT NULL,
@@ -93,12 +96,12 @@ CREATE TABLE `trip_info` (
 DROP TABLE IF EXISTS `trip_ticket`;
 CREATE TABLE `trip_ticket` (
   `trip_ticket_date` varchar(70) NOT NULL,
-  `employee_id` varchar(11) DEFAULT NULL,
+  `emp_id` varchar(11) DEFAULT NULL,
   `license_plate` varchar(11) DEFAULT NULL,
   `passenger` varchar(255) DEFAULT NULL,
   `destination` varchar(255) DEFAULT NULL,
   `purpose` varchar(255) DEFAULT NULL,
-  `trip_date` date DEFAULT NULL,
+  `trip_info_id` int(11) DEFAULT NULL,
   `balance_in_tank` int(11) DEFAULT NULL,
   `issued_from_stock` int(11) DEFAULT NULL,
   `purchase_outside` int(11) DEFAULT NULL,
@@ -151,20 +154,21 @@ ALTER TABLE `official_travel`
 -- Indexes for table `trip_info`
 --
 ALTER TABLE `trip_info`
-  ADD PRIMARY KEY (`trip_date`);
+  ADD PRIMARY KEY (`trip_info_id`);
 
 --
 -- Indexes for table `trip_ticket`
 --
 ALTER TABLE `trip_ticket`
   ADD PRIMARY KEY (`trip_ticket_date`),
-  ADD KEY `FK` (`employee_id`,`license_plate`,`trip_date`);
+  ADD KEY `FK` (`emp_id`,`license_plate`,`trip_info_id`);
 
 --
 -- Indexes for table `vehicle`
 --
 ALTER TABLE `vehicle`
   ADD PRIMARY KEY (`license_plate`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
