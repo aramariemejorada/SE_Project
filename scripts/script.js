@@ -120,8 +120,8 @@ $(document).ready(function(){
             },
             success: function (data) {
                 console.log(data);
-                // window.open('before-print.php');
-                // window.location = "driver.php";
+                window.open('before-print.php');
+                window.location = "driver.php";
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown);
@@ -131,50 +131,69 @@ $(document).ready(function(){
     var selectData;
     var selectData2;
     $('#select-type1').change(function(){
-      selectData = $(this).val()
+      selectData = $(this).val();
     });
     $('#select-type2').change(function(){
-      selectData2 = $(this).val()
+      selectData2 = $(this).val();
+      $.ajax({
+          url: "includes/balance.php",
+          type: "POST",
+          data:{
+              tt_date : selectData2,
+          },
+          success: function (data) {
+              console.log(data);
+              if(data==-1){
+                 $('#balance').val('');
+              }else{ 
+                data = JSON.parse(data);
+                $('#balance').val(data['balance_in_tank']);
+              }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+          }  
+      });
     });
+    $
     $("#submit_after_button").click(function(){
        $("#distance").attr('value',getDistance());
        $("#distance").attr('Placeholder',getDistance());
-
-      // if(confirm("Data that will be submitted will not be changed.Would you like to submit?")==true){
-      //   $.ajax({
-      //       url: "includes/after.php",
-      //       type: "POST",
-      //       data:{
-      //           tt_date : selectData,
-      //           dateDepart : $("#dateDepart").prop('value'),
-      //           odomReading : $("#odomReading").prop('value'),
-      //           timeOfDepart : $("#timeOfDepart").prop('value'),
-      //           timeOfArrival : $("#timeOfArrival").prop('value'),
-      //           departure : $("#departure").prop('value'),
-      //           arrival : $("#arrival").prop('value'),
-      //       },
-      //       success: function (data) {
-      //           console.log(data);
-      //           if(data == 1){
-      //             window.location = 'driver.php';
-      //           }
-      //       },
-      //       error: function(jqXHR, textStatus, errorThrown) {
-      //           console.log(textStatus, errorThrown);
-      //       }  
-      //   });
-      // }
+      if(confirm("Data that will be submitted will not be changed.Would you like to submit?")==true){
+        $.ajax({
+            url: "includes/after.php",
+            type: "POST",
+            data:{
+                tt_date : selectData,
+                dateDepart : $("#dateDepart").prop('value'),
+                odomReading : $("#odomReading").prop('value'),
+                timeOfDepart : $("#timeOfDepart").prop('value'),
+                timeOfArrival : $("#timeOfArrival").prop('value'),
+                departure : $("#departure").prop('value'),
+                arrival : $("#arrival").prop('value'),
+            },
+            success: function (data) {
+                console.log(data);
+                if(data == 1){
+                  window.location = 'driver.php';
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }  
+        });
+      }
     });
-    var a;
-    var b;
-    function getFinalBalance(){
-      var x = parseFloat( $("#balance").prop('value'));
-      var y = parseFloat( $("#purchased").prop('value'));
-      var z = parseFloat( $("#issuedStock").prop('value'))
-      var a = x+y+z;
-      var b = (a - parseFloat($("#gasUsed").prop('value'))).toFixed(4);
-      return b;
-    }
+    // var a;
+    // var b;
+    // function getFinalBalance(){
+    //   var x = parseFloat( $("#balance").prop('value'));
+    //   var y = parseFloat( $("#purchased").prop('value'));
+    //   var z = parseFloat( $("#issuedStock").prop('value'))
+    //   var a = x+y+z;
+    //   var b = (a - parseFloat($("#gasUsed").prop('value'))).toFixed(4);
+    //   return b;
+    // }
 
     $( "input[id='s_odomReading']").prop({disabled: true});
     $( "input[id='f_odomReading']").prop({disabled: true});

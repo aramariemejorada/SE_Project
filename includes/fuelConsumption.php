@@ -6,7 +6,7 @@
                 <p style="font-weight: bold">Note: All fields are required.</p>
                 <select class="form-control" style="width: 30%;" id="select-type2" required="required">
                 <option value = "0">None</option>';
-                    $date = 'SELECT * FROM trip_ticket where final_balance is NULL and emp_id='.$_SESSION['u_id'];
+                    $date = 'SELECT * FROM trip_ticket where end_balance is NULL and emp_id='.$_SESSION['u_id'];
                     $date_query = mysqli_query($conn,$date);
                     $option = '';
                     if(mysqli_num_rows($date_query)==0){
@@ -26,7 +26,7 @@
                     <small class="form-text text-muted" style="display: block">
                         Balance in Tank
                     </small>  
-                    <input type="number" class="form-control input-id" id="balance" placeholder="ltrs.">        
+                    <input type="number" class="form-control input-id" id="balance" readonly>        
                 </div>
                 <span>
                     <div class="form-group">

@@ -1,4 +1,5 @@
 <?php
+session_start();
     echo '<div class="panel panel-default">
         <div class="panel-heading container" style="background-color:white; padding: 20px;">
         <img src="images\logo-solo.png" style="width:170px; margin:auto;">

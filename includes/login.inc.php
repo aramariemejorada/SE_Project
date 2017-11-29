@@ -37,7 +37,7 @@ $pass = mysqli_real_escape_string($conn, $p);
    
                     } elseif ($hashCheck == true){
                             // header("Location: ../admin.php");
-                            $_SESSION['u_id'] = $user;
+                            $_SESSION['u_id'] = $username;
                             echo 1;
                             exit();
                     }
