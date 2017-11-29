@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2017 at 02:11 PM
+-- Generation Time: Nov 29, 2017 at 09:42 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -43,44 +43,14 @@ CREATE TABLE `employee` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fuel_consumption`
---
-
-DROP TABLE IF EXISTS `fuel_consumption`;
-CREATE TABLE `fuel_consumption` (
-  `trip_ticket_date` varchar(70) DEFAULT NULL,
-  `fuel_consumption_date` varchar(70) NOT NULL,
-  `distance_travelled_per_ltr` float DEFAULT NULL,
-  `normal_travel` float DEFAULT NULL,
-  `total_liters_consumed` float DEFAULT NULL,
-  `excess` float DEFAULT NULL,
-  `remarks` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `official_travel`
---
-
-DROP TABLE IF EXISTS `official_travel`;
-CREATE TABLE `official_travel` (
-  `official_travel_date` varchar(70) NOT NULL,
-  `trip_ticket_date` varchar(255) DEFAULT NULL,
-  `remarks` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `trip_info`
 --
 
 DROP TABLE IF EXISTS `trip_info`;
 CREATE TABLE `trip_info` (
   `trip_info` int(11) NOT NULL,
-  `trip_date` date DEFAULT NULL,
   `trip_ticket_date` varchar(70) DEFAULT NULL,
+  `trip_date` date DEFAULT NULL,
   `depart_time` time DEFAULT NULL,
   `depart_place` varchar(255) DEFAULT NULL,
   `arrive_time` time DEFAULT NULL,
@@ -110,7 +80,13 @@ CREATE TABLE `trip_ticket` (
   `total_kms_travelled` float DEFAULT NULL,
   `gear_oil_used` float DEFAULT NULL,
   `lubricant_oil_used` float DEFAULT NULL,
-  `grease_used` float DEFAULT NULL
+  `grease_used` float DEFAULT NULL,
+  `distance_travelled_per_ltr` float DEFAULT NULL,
+  `normal_travel` float DEFAULT NULL,
+  `total_liters_consumed` float DEFAULT NULL,
+  `excess` float DEFAULT NULL,
+  `fuel_consumption_remarks` varchar(255) DEFAULT NULL,
+  `official_travel_remarks` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -136,20 +112,6 @@ CREATE TABLE `vehicle` (
 --
 ALTER TABLE `employee`
   ADD PRIMARY KEY (`emp_id`);
-
---
--- Indexes for table `fuel_consumption`
---
-ALTER TABLE `fuel_consumption`
-  ADD PRIMARY KEY (`fuel_consumption_date`),
-  ADD KEY `FK` (`trip_ticket_date`);
-
---
--- Indexes for table `official_travel`
---
-ALTER TABLE `official_travel`
-  ADD PRIMARY KEY (`official_travel_date`),
-  ADD KEY `FK` (`trip_ticket_date`);
 
 --
 -- Indexes for table `trip_info`
