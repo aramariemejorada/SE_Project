@@ -18,21 +18,21 @@
                             <h2>TRIP TICKET</h2>
                         </center>
                     </div>
-                <form action="includes/login.inc.php" method="POST">
+                <form>
                     <div id="form" class="col-sm-4">
                             <div id="username" class="form-group" id="login">
-								<label for="name">Employee ID</label>
-						        <input type="text" name="empid" class="form-control" id="name" placeholder="Enter username" required="required" />
-								<label for="name" style="margin-top: 10px">Password</label>
-						        <input type="password" name="passw" class="form-control" id="name" placeholder="Enter password" required="required" />
-						    </div> 
-						    <button type="submit submit-id" name ="submit" class="btn btn-primary btn-block">Log In</button>
+                                <label for="name">Employee ID</label>
+                                <input type="text" class="form-control" id="user" placeholder="Enter username" required="required" />
+                                <label for="name" style="margin-top: 10px">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter password" required="required" />
+                            </div> 
+                             <button type="button" id="login_button" class="btn btn-primary btn-block">Log In</button>
                         <div class="panel panel-default inquiry">
                             <div class="panel-body help-panel">
                                 Doesn't have an account? <a data-toggle="modal" data-target="#signup">Sign-up</a>
                             </div>
-                        	</div>
-                 	   </div>
+                            </div>
+                       </div>
                     </form>
                 </div>
             </div>
@@ -47,46 +47,46 @@
                             <h3 class="modal-title" style="font-weight: bold"><center>Sign up</center></h3>
                         </div>
                         <div class="container-fluid" style="margin-top: 10px">
-                            <form class="form-inline" action = "includes/signup.inc.php" method = "POST">
+                            <form>
                                 <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                     <medium class="form-text" style="display: block; font-weight:bold">First Name</medium>
-                                    <input type="text" class="form-control" name = "firstName" placeholder="Enter first name" required="required" />
+                                    <input type="text" class="form-control" id = "firstName" placeholder="Enter first name" required="required" />
                                 </div>
                                 <span>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Middle Name</medium>
-                                        <input  type="text" class="form-control" name = "middleName" placeholder="Enter middle name" required="required" />
+                                        <input  type="text" class="form-control" id = "middleName" placeholder="Enter middle name" required="required" />
                                     </div>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Last Name</medium>
-                                        <input type="text" class="form-control" name = "lastName" placeholder="Enter last name" required="required" />
+                                        <input type="text" class="form-control" id = "lastName" placeholder="Enter last name" required="required" />
                                     </div>
                                 </span>
                                 <br>
                                 <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                     <medium class="form-text" style="display: block; font-weight:bold">Employee ID</medium>
-                                    <input type="text" class="form-control" name = "empid" placeholder="Enter Employee ID" required="required" />
+                                    <input type="text" class="form-control" id = "empid" placeholder="Enter Employee ID" required="required" />
                                 </div>
                                 <span>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Password</medium>
-                                        <input type="password" class="form-control" name = "password" placeholder="Enter password" required="required" />
+                                        <input type="password" class="form-control" id = "password" placeholder="Enter password" required="required" />
                                     </div>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Re-enter password</medium>
-                                        <input type="password" class="form-control" name = "passwordcon" placeholder="Re-enter password" required="required" />
+                                        <input type="password" class="form-control" id = "passwordcon" placeholder="Re-enter password" required="required" />
                                     </div>
                                 </span>
                                 <br>
-                                <label class="radio-inline">
-                                    <input type="radio" name="admin">Admin
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="driver">Driver
-                                </label>
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio" value="Admin">&nbsp&nbspAdmin</label>
+                                    </div>&nbsp&nbsp
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio" value="Driver">&nbsp&nbspDriver</label>
+                                    </div>
                                 <center>
                                     <div class="col-lg-12">
-                                        <button type="submit" name ="submit" class="btn btn-primary" id="btnContactUs">Sign Up</button>
+                                         <button type="button"  id="signup_button" class="btn btn-primary">Sign Up</button>
                                     </div>
                                 </center>
                             </form>
@@ -99,5 +99,6 @@
         <!-- end of modal -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="scripts/script.js"></script>
     </body>
 </html>
