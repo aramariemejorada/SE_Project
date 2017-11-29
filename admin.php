@@ -16,6 +16,7 @@
             <li><a data-toggle="tab" href="#travelReport">Official Travel Report</a></li>
             <li><a data-toggle="tab" href="#fuelConsumption">Fuel Consumption Report</a></li>
             <li><a data-toggle="tab" href="#vehicles">Vehicles</a></li>
+            <li><a data-toggle="tab" href="#driver">Driver</a></li>
         </ul>
         <div class="tab-content">
             <div id="tripTick" class="tab-pane fade in active">
@@ -52,6 +53,13 @@
                 <div id="tabs" class="tab-content container" style="border-radius: 5px">
                     <div id="view" class="tab-pane fade in active">
                         <?php include 'includes\vehicles.php' ?>
+                    </div>
+                </div>       
+            </div>
+            <div id="driver" class="tab-pane fade">
+                <div id="tabs" class="tab-content container" style="border-radius: 5px">
+                    <div id="view" class="tab-pane fade in active">
+                        <?php include 'includes\users.php' ?>
                     </div>
                 </div>       
             </div>

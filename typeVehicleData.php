@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <h2>Yearly Report</h2>
-            <h4>Nissan GTX 1050 | License Plate No: GSR-541
+            <!-- <h4>Nissan GTX 1050 | License Plate No: GSR-541 option: will be shown after search -->
             <span class="logout">
             <div class="form-group" style="display: inline-block">
                 <select class="form-control" id="year">

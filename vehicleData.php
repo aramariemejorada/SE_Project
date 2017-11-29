@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <h2>Monthly Report</h2>
-            <h4>Nissan GTX 1050 | Driver(s): xxxxx,xxxxx
+            <!-- <h4>Nissan GTX 1050 | Driver(s): xxxxx,xxxxx option: will be shown after search -->
             <span class="logout">
                 <?php include 'includes\monthPicker.php' ?>
             </span></h4>

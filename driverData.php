@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <h2>Weekly Report</h2>
-            <h4>Leo Manansala | ID: 256-ABC-4A
+            <!-- <h4>Leo Manansala | ID: 256-ABC-4A option: will be shown after search -->
             <span class="logout">
                 <div class="form-group" style="display: inline-block">
                     <select class="form-control" id="month">

@@ -1,6 +1,7 @@
 <?php 
     echo '<thead>
         <tr>
+        <th>Driver</th>
         <th>Vehicle Used</th>
         <th>Date</th>
         <th>Time of Departure</th>
@@ -12,6 +13,7 @@
     </thead>
     <tbody>
         <tr>
+        <td>Leo Manansala</td>
         <td>GSR-541</td>
         <td>2017/08/15</td>
         <td>08:00 a.m.</td>
