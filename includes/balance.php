@@ -1,7 +1,7 @@
 <?php
 include_once 'dbh.inc.php';
 $date = $_POST['tt_date'];
-$sql = 'SELECT vehicle.balance_in_tank from vehicle inner join trip_ticket 
+$sql = 'SELECT vehicle.balance_in_tank, vehicle.normal_travel from vehicle inner join trip_ticket 
 		on trip_ticket.license_plate=vehicle.license_plate 
 		where trip_ticket.trip_ticket_date="'.$_POST['tt_date'].'"';
 $sql_query = mysqli_query($conn,$sql);

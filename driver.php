@@ -17,9 +17,8 @@
         <?php include 'includes\header.php' ?>
         <div class="container">
             <ul class="nav nav-tabs" style="margin-left: 10px">
-                <li class="active"><a data-toggle="tab" href="#before">Before Travel</a></li>
-                <li><a data-toggle="tab" href="#after">After Travel</a></li>
-                <li><a data-toggle="tab" href="#fuelConsumption">Fuel Consumption</a></li>
+                <li class="active"><a data-toggle="tab" href="#before">Approval</a></li>
+                <li><a data-toggle="tab" href="#after">Fuel Consumption</a></li>
             </ul>
             <div class="tab-content">
                 <div id="before" class="tab-pane fade in active">
@@ -48,7 +47,6 @@
                 <div class="modal-content" style="padding: 30px">
                     <div class="container-fluid">
                         <span>Date:&nbsp&nbsp<span id="mod_date" style="font-weight: bold;"></span></span><br>
-                        <span>Driver:&nbsp&nbsp<span id="mod_driver" style="font-weight: bold;"></span></span> <br>
                         <span>Authorized Passenger:&nbsp&nbsp<span id="mod_pass" style="font-weight: bold;"></span></span> <br>
                         <span>Vehicle Used:&nbsp&nbsp<span id="mod_vehicle" style="font-weight: bold;"></span></span> <br>
                         <span>Destinations:&nbsp&nbsp<span id="mod_dest" style="font-weight: bold;"></span> </span><br>

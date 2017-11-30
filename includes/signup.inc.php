@@ -7,12 +7,12 @@ $firstName = mysqli_real_escape_string($conn, $_POST['firstname']);
 $lastName = mysqli_real_escape_string($conn, $_POST['lastname']);
 $middleName = mysqli_real_escape_string($conn, $_POST['middlename']);
 $empid = mysqli_real_escape_string($conn, $_POST['empid']);
-$password = mysqli_real_escape_string($conn, $_POST['password']);
+$passw = mysqli_real_escape_string($conn, $_POST['passw']);
 $passwordcon = mysqli_real_escape_string($conn, $_POST['passwordcon']);
 $role = $_POST['role'];
 
-if($password === $passwordcon){
-	$pass = $password;
+if($passw === $passwordcon){
+	$pass = $passw;
 }else{
 	// header("Location: ../index.php?signup=notMatch");
 	echo -3;
@@ -22,7 +22,7 @@ if($password === $passwordcon){
 //Error Handlers
 //Check for Empty Fields
 
-if (empty($firstName) || empty($lastName) || empty($middleName) || empty($empid) || empty($password) || empty($passwordcon)|| empty($role)) {
+if (empty($firstName) || empty($lastName) || empty($middleName) || empty($empid) || empty($passw) || empty($passwordcon)|| empty($role)) {
 	
 	// header("Location: ../index.php?signup=empty");
 	echo -2;

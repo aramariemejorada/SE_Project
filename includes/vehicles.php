@@ -5,27 +5,36 @@
         </span>
     </form>
     <div class="container table-responsive" style="padding-left: 0">
-        <table id="table" class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Vehicle Name</th>
-                    <th>Plate No.</th>
+        <?php
+            include_once 'dbh.inc.php';
+            $show_vehicles= 'SELECT * from vehicle';
+            $show_vehicles_query = mysqli_query($conn,$show_vehicles);
+            echo '
+            <table id="table" class="table table-hover">
+                <thead>
+                    <tr>
+                    <th>License Plate</th>
+                    <th>Vehicle Type</th>
                     <th>No. of Cylinder</th>
                     <th>Balance in Tank</th>
                     <th>Normal Travel in km/ltr.</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>NISSAN</td>
-                    <td>GSR-541</td>
-                    <td>4</td>
-                    <td>10.00</td>
-                    <td>7</td>
-                    <td><button type="submit" name="edit" data-toggle="modal" data-target="#editVehicle">Edit</button></td>
-                </tr>
-            </tbody>
-        </table>
+                    </tr>
+                 </thead>';
+            while($row = mysqli_fetch_assoc($show_vehicles_query))
+            {
+                $id = $row["license_plate"];
+                echo"
+                <td>".$row["license_plate"]."</td>
+                <td>".$row["vehicle_type"]."</td>
+                <td>".$row["no_of_cylinder"]."</td>
+                <td>".$row["balance_in_tank"]."</td>
+                <td>".$row["normal_travel"]."</td>
+                <td><button class='cancel' value=$id>Edit</button></td>
+                <td><button class='cancel' value=$id>Remove</button></td>
+                </tr>";
+            }
+            echo "</table>";
+            ?>
     </div>
 </div>
 <!-- modal for adding vehicle -->

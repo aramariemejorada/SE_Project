@@ -50,16 +50,16 @@
                             <form>
                                 <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                     <medium class="form-text" style="display: block; font-weight:bold">First Name</medium>
-                                    <input type="text" class="form-control" id = "firstName" placeholder="Enter first name" required="required" />
+                                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required="required" />
                                 </div>
                                 <span>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Middle Name</medium>
-                                        <input  type="text" class="form-control" id = "middleName" placeholder="Enter middle name" required="required" />
+                                        <input  type="text" class="form-control" id="middleName" placeholder="Enter middle name" required="required" />
                                     </div>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Last Name</medium>
-                                        <input type="text" class="form-control" id = "lastName" placeholder="Enter last name" required="required" />
+                                        <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required="required" />
                                     </div>
                                 </span>
                                 <br>
@@ -70,11 +70,11 @@
                                 <span>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Password</medium>
-                                        <input type="password" class="form-control" id = "password" placeholder="Enter password" required="required" />
+                                        <input type="password" class="form-control" id="passw" placeholder="Enter password" required="required" />
                                     </div>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                         <medium class="form-text" style="display: block; font-weight:bold">Re-enter password</medium>
-                                        <input type="password" class="form-control" id = "passwordcon" placeholder="Re-enter password" required="required" />
+                                        <input type="password" class="form-control" id="passwordcon" placeholder="Re-enter password" required="required" />
                                     </div>
                                 </span>
                                 <br>

@@ -28,46 +28,40 @@ $pass = mysqli_real_escape_string($conn, $p);
                   if($row = mysqli_fetch_assoc($result)) {
                     //Dehashing the password
                     $hashCheck = password_verify($pass, $row["password"]);
-                    
                     if($hashCheck == false){
-                        echo "passError";
-                        exit();
+                      echo "passError";
+                      exit();
                         // header("Location: ../index.php?login=Incorrect Password");
                         // exit(); 
    
                     } elseif ($hashCheck == true){
-                            // header("Location: ../admin.php");
-                            $_SESSION['u_id'] = $username;
-                            echo 1;
-                            exit();
+                      // header("Location: ../admin.php");
+                      $_SESSION['u_id'] = $username;
+                      echo 1;
+                      exit();
                     }
                 }else{
-                    echo "nameError";
-                    exit();
+                  echo "nameError";
+                  exit();
                      // header("Location: ../index.php?login=Incorrect Username");
       //                exit();     
-                }
+                } 
             }else{
-                if($row = mysqli_fetch_assoc($result)) {
-                    //Dehashing the password
-                    $hashCheck = password_verify($pass, $row["password"]);
-                    if($hashCheck == false){
-                         echo "passError";
-                         exit();
-                        //  header("Location: ../index.php?login=Incorrect Password");
-                        // exit();  
-                    } elseif ($hashCheck == true){
-                            $_SESSION['u_id'] = $username;
-                            // header("Location: ../index2.php?"); //guest.php previously 
-                            echo 2;
-                            exit();
-                    }
+              if($row = mysqli_fetch_assoc($result)) {
+                  //Dehashing the password
+                $hashCheck = password_verify($pass, $row["password"]);
+                if($hashCheck == false){
+                   echo "passError";
+                   exit();
+                    //  header("Location: ../index.php?login=Incorrect Password");
+                    // exit();  
+                }elseif ($hashCheck == true){
+                  $_SESSION['u_id'] = $username;
+                  // header("Location: ../index2.php?"); //guest.php previously 
+                  echo 2;
+                  exit();
                 }
+              }
             }
      } 
-// }else{
-//     echo -1;
-//     // header("Location: ../index.php?signup");
-//     // exit();      
-// }
 ?>

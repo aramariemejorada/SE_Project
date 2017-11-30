@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2017 at 03:49 AM
+-- Generation Time: Nov 29, 2017 at 09:42 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -82,9 +82,11 @@ CREATE TABLE `trip_ticket` (
   `lubricant_oil_used` float DEFAULT NULL,
   `grease_used` float DEFAULT NULL,
   `distance_travelled_per_ltr` float DEFAULT NULL,
+  `normal_travel` float DEFAULT NULL,
   `total_liters_consumed` float DEFAULT NULL,
   `excess` float DEFAULT NULL,
-  `remarks` varchar(255) DEFAULT NULL
+  `fuel_consumption_remarks` varchar(255) DEFAULT NULL,
+  `official_travel_remarks` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -98,8 +100,7 @@ CREATE TABLE `vehicle` (
   `license_plate` varchar(11) NOT NULL,
   `vehicle_type` varchar(70) DEFAULT NULL,
   `no_of_cylinder` int(11) DEFAULT NULL,
-  `balance_in_tank` float DEFAULT NULL,
-  `normal_travel` float DEFAULT NULL
+  `balance_in_tank` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -130,8 +131,7 @@ ALTER TABLE `trip_ticket`
 -- Indexes for table `vehicle`
 --
 ALTER TABLE `vehicle`
-  ADD PRIMARY KEY (`license_plate`),
-  ADD KEY `FK` (`normal_travel`);
+  ADD PRIMARY KEY (`license_plate`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
