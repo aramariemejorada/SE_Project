@@ -20,7 +20,7 @@
                     </div>
                 <form>
                     <div id="form" class="col-sm-4">
-                            <div id="username" class="form-group" id="login">
+                            <div class="form-group" id="login">
                                 <label for="name">Employee ID</label>
                                 <input type="text" class="form-control" id="user" placeholder="Enter username" required="required" />
                                 <label for="name" style="margin-top: 10px">Password</label>

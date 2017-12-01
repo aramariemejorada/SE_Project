@@ -17,10 +17,14 @@
             </span></h4>
             <hr>
             <div class="container table-responsive" style="padding-left: 0">
-                <table id="table" class="table table-hover">
                     <?php include 'includes\vehicleTable.php' ?>
-                </table> 
+                    <center>
+                        <form action="includes/excel.php" method="post">
+                            <input type="submit" name="export_excel"></button>
+                        </form>
+                    </center>
             </div>
+
         </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

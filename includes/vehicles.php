@@ -29,8 +29,8 @@
                 <td>".$row["no_of_cylinder"]."</td>
                 <td>".$row["balance_in_tank"]."</td>
                 <td>".$row["normal_travel"]."</td>
-                <td><button class='cancel' value=$id>Edit</button></td>
-                <td><button class='cancel' value=$id>Remove</button></td>
+                <td><button class='modifyVehicle' data-toggle='modal' data-target='#editVehicle' value=$id>Edit</button></td>
+                <td><button class='removeVehicle' value=$id>Remove</button></td>
                 </tr>";
             }
             echo "</table>";
@@ -42,6 +42,7 @@
     <div class="modal-dialog modal-lg" role="document" style="max-width: 500px">
         <div class="modal-content" style="padding: 30px">
             <div class="container-fluid">
+                <p>Note: All fields are required.</p>
                 <div class="form-group">
                     <small class="form-text text-muted" style="display: block">
                         Vehicle Name
@@ -70,7 +71,7 @@
             <div class="form-group">
                 <center>
                     <div class="col-lg-12">
-                        <button type="button" id="printTrip" class="btn btn-primary">Add</a></button>
+                        <button type="button" id="newVehicle" class="btn btn-primary">Add</button>
                     </div>
                 </center>
             </div>
@@ -88,19 +89,19 @@
                     <small class="form-text text-muted" style="display: block">
                         Balance in Tank
                     </small>
-                    <input type="text" class="form-control input-id" id="balance">
+                    <input type="number" class="form-control input-id" id="newBalance">
                 </div>
                 <div class="form-group">
                     <small class="form-text text-muted" style="display: block">
                         Normal Travel (km/ltr)
                     </small>
-                    <input type="text" class="form-control input-id" id="licensePlate">
+                    <input type="number" class="form-control input-id" id="newTravel">
                 </div>
             </div>
             <div class="form-group">
                 <center>
                     <div class="col-lg-12">
-                        <button type="button" id="printTrip" class="btn btn-primary">Save</a></button>
+                        <button type="button" id="edit" class="btn btn-primary">Save</button>
                     </div>
                 </center>
             </div>
