@@ -30,7 +30,7 @@ if (empty($firstName) || empty($lastName) || empty($middleName) || empty($empid)
 
 } else {
 	//Check if input character are valid
-	if(!preg_match("/^[a-zA-Z\s]*$/", $firstName) || !preg_match("/^[a-zA-Z\s]*$/", $lastName) || !preg_match("/^[a-zA-Z\s]*$/", $middleName)) {
+	if(!preg_match("/^[a-zA-Z\s]*$/", $firstName) || !preg_match("/^[a-zA-Z\s]*$/", $lastName) || !preg_match("/^[a-zA-Z\s]*$/", $middleName) || !preg_match("/^[\D-]*$/", $empid)) {
 		// header("Location: ../index.php?signup=invalid");
 		echo -1;
 		exit();
