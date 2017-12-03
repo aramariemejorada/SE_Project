@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2017 at 09:42 PM
+-- Generation Time: Dec 03, 2017 at 05:47 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -69,6 +69,8 @@ CREATE TABLE `trip_ticket` (
   `trip_ticket_date` varchar(70) NOT NULL,
   `emp_id` varchar(11) DEFAULT NULL,
   `license_plate` varchar(11) DEFAULT NULL,
+  `begin_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
   `passenger` varchar(255) DEFAULT NULL,
   `destination` varchar(255) DEFAULT NULL,
   `purpose` varchar(255) DEFAULT NULL,
@@ -82,11 +84,9 @@ CREATE TABLE `trip_ticket` (
   `lubricant_oil_used` float DEFAULT NULL,
   `grease_used` float DEFAULT NULL,
   `distance_travelled_per_ltr` float DEFAULT NULL,
-  `normal_travel` float DEFAULT NULL,
   `total_liters_consumed` float DEFAULT NULL,
   `excess` float DEFAULT NULL,
-  `fuel_consumption_remarks` varchar(255) DEFAULT NULL,
-  `official_travel_remarks` varchar(255) DEFAULT NULL
+  `remarks` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -100,7 +100,8 @@ CREATE TABLE `vehicle` (
   `license_plate` varchar(11) NOT NULL,
   `vehicle_type` varchar(70) DEFAULT NULL,
   `no_of_cylinder` int(11) DEFAULT NULL,
-  `balance_in_tank` float DEFAULT NULL
+  `balance_in_tank` float DEFAULT NULL,
+  `normal_travel` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -131,7 +132,8 @@ ALTER TABLE `trip_ticket`
 -- Indexes for table `vehicle`
 --
 ALTER TABLE `vehicle`
-  ADD PRIMARY KEY (`license_plate`);
+  ADD PRIMARY KEY (`license_plate`),
+  ADD KEY `FK` (`normal_travel`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
