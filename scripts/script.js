@@ -158,6 +158,7 @@ $(document).ready(function(){
               console.log(data);
               if(data==1){
                 alert("Added a new vehicle.");
+                window.location = 'admin.php';
               }
           },
           error: function(jqXHR, textStatus, errorThrown) {
@@ -166,56 +167,61 @@ $(document).ready(function(){
       });
     }
   });
+  var plate;
+  $(document).on("click", ".modifyVehicle", function(event) {
+    plate = $(this).val();
+    console.log(plate);
+  });
+  $('#edit').click(function(){
+    if($('#newBalance').prop('value')=="" && $('#newTravel').prop('value')==""){
+      alert("Empty fields");
+    }else{
+       $.ajax({
+          url: "includes/modifyVehicle.php",
+          type: "POST",
+          data:{
+            id : plate,
+            action: 1,
+            newBalance: $('#newBalance').prop('value'),
+            newTravel : $('#newTravel').prop('value')
+          },
+          success: function (data) {
+            console.log(data);
+            if(data ==1){
+              alert("Vehicle edited");
+              window.location = "admin.php";
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+          }  
+      }); 
+    }
+  });
   $(document).on("click", ".removeVehicle", function(event) {
-    console.log($('.removeVehicle').prop('value'))
-    // $.ajax({
-    //  url: "includes/modifyVehicle.php",
-    //  type: "POST",
-    //  data: { 
-    //     id : $('.modifyVehicle').prop('value'),
-    //     action: 1,
-    //     newBalance: $('#newBalance').prop('value'),
-    //     newTravel : $('#newTravel').prop('value')
-    //   } ,
-    //  success: function (data) {
-    //    console.log(data);
-    //    if(data ==1){
-    //      if(confirm("success")==true){
-    //        window.location = "admin.php";
-    //      }
-    //    }
-    //  },
-    //  error: function(jqXHR, textStatus, errorThrown) {
-    //     console.log(textStatus, errorThrown);
-    //  }
-  }); 
-              
-    // if($('#newBalance').prop('value')=="" && $('#newTravel').prop('value')==""){
-    //   alert("Empty fields");
-    // }else{
-    //    $.ajax({
-    //       url: "includes/modifyVehicle.php",
-    //       type: "POST",
-    //       data:{
-    //         id : $('.modifyVehicle').prop('value'),
-    //         action: 1,
-    //         newBalance: $('#newBalance').prop('value'),
-    //         newTravel : $('#newTravel').prop('value')
-    //       },
-    //       success: function (data) {
-    //         console.log(data);
-    //         if(data ==1){
-    //           if(confirm("success")==true){
-    //             window.location = "admin.php";
-    //           }
-    //         }
-    //       },
-    //       error: function(jqXHR, textStatus, errorThrown) {
-    //         console.log(textStatus, errorThrown);
-    //       }  
-    //   }); 
-    // }
-  // });
+    plate = $(this).val();
+    if(confirm("Do you really want to delete this vehicle?")==true){
+       $.ajax({
+          url: "includes/modifyVehicle.php",
+          type: "POST",
+          data:{
+            id : plate,
+            action: 2,
+          },
+          success: function (data) {
+            console.log(data);
+            if(data ==1){
+              alert("Vehicle deleted.");
+              window.location = "admin.php";
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+          }  
+      }); 
+    }
+  });
+
   $('#show_before_modal').click(function(){
       var date1 = $("#beforeDate1").prop('value');
       var date2 = $("#beforeDate2").prop('value'); 

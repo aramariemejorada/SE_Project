@@ -9,7 +9,7 @@
             include_once 'dbh.inc.php';
             $show_vehicles= 'SELECT * from vehicle';
             $show_vehicles_query = mysqli_query($conn,$show_vehicles);
-            echo '
+            $html ='
             <table id="table" class="table table-hover">
                 <thead>
                     <tr>
@@ -23,8 +23,8 @@
             while($row = mysqli_fetch_assoc($show_vehicles_query))
             {
                 $id = $row["license_plate"];
-                echo"
-                <td>".$row["license_plate"]."</td>
+                $html.="<tr>
+                <td>".$id."</td>
                 <td>".$row["vehicle_type"]."</td>
                 <td>".$row["no_of_cylinder"]."</td>
                 <td>".$row["balance_in_tank"]."</td>
@@ -33,7 +33,8 @@
                 <td><button class='removeVehicle' value=$id>Remove</button></td>
                 </tr>";
             }
-            echo "</table>";
+            $html.="</table>";
+            echo $html;
             ?>
     </div>
 </div>
@@ -101,7 +102,7 @@
             <div class="form-group">
                 <center>
                     <div class="col-lg-12">
-                        <button type="button" id="edit" class="btn btn-primary">Save</button>
+                        <button type="button" id="edit" class="btn btn-primary">Edit</button>
                     </div>
                 </center>
             </div>
