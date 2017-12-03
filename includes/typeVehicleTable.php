@@ -1,9 +1,9 @@
 <?php
     include_once 'dbh.inc.php';
-    $show= 'SELECT * FROM `trip_ticket` inner join vehicle on trip_ticket.license_plate=vehicle.license_plate';
+    $show= 'SELECT * FROM `trip_ticket` inner join vehicle on trip_ticket.license_plate=vehicle.license_plate where end_balance is not null';
     $show_query = mysqli_query($conn,$show);
-    echo '
-    <table id="table" class="table table-hover">
+    $html ='
+    <table id="tableData" class="table table-hover">
         <thead>
             <tr>
             <th>Type of Vehicle</th>
@@ -22,7 +22,7 @@
          </thead>';
     while($row = mysqli_fetch_assoc($show_query))
     {
-        echo"
+        $html.="
         <td>".$row["vehicle_type"]."</td>
         <td>".$row["license_plate"]."</td>
         <td>".$row["no_of_cylinder"]."</td>
@@ -37,5 +37,8 @@
         <td>".$row["remarks"]."</td>
         </tr>";
     }
-    echo "</table>";
+    $html.="</table>";
+    echo $html;
 ?>
+
+ 

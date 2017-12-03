@@ -65,7 +65,7 @@
                                 <br>
                                 <div class="form-group" style="padding: 2px; padding-bottom: 10px;">
                                     <medium class="form-text" style="display: block; font-weight:bold">Employee ID</medium>
-                                    <input type="text" class="form-control" id = "empid" placeholder="Enter Employee ID" required="required" />
+                                    <input type="number" class="form-control" id = "empid" placeholder="Enter Employee ID" required="required" />
                                 </div>
                                 <span>
                                     <div class="form-group" style="padding: 2px; padding-bottom: 10px;">

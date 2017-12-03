@@ -20,7 +20,7 @@
                 <td>".$row["emp_id"]."</td>
                 <td>".ucwords($row["firstname"])." ".ucwords($row["middlename"])." ".ucwords($row["lastname"])."</td>
                 <td>".$row["role"]."</td>
-                <td><button class='cancel' value=$id>Delete</button></td>
+                <td><button class='removeUser' value=$id>Delete</button></td>
                 </tr>";
             }
             echo "</table>";

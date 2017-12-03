@@ -7,11 +7,11 @@
                 <small class="form-text text-muted" style="display: block">
                     Initial Odometer Reading
                 </small>
-                <input type="text" class="form-control input-id" id="s_odomReading">
+                <input type="number" class="form-control input-id" id="s_odomReading">
                 <small class="form-text text-muted" style="display: block">
                     Final Odometer Reading
                 </small>
-                <input type="text" class="form-control input-id" id="f_odomReading"><br><br>
+                <input type="number" class="form-control input-id" id="f_odomReading"><br><br>
                 <input type="checkbox" id="odomCheck" checked>Manual Input (Check if odometer is out of order.)<br>
                 <div class="form-group">
                     <button type="button" class="btn btn-primary" id="submit_after_button" style="min-width:50px; margin-top: 10px;">Submit</button> 
@@ -107,14 +107,15 @@
                     <textarea cols="60" class="form-control input-id" id="remarks" placeholder="remarks"></textarea>
                     </div>
                     </div>
+                    <center>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fuel_modal" id="submit_fuel_button" style="min-width:150px; margin-top: 10px;">Submit</button> 
+                    </div>
+                    </center>
                 </div>
                 </span>       
                 <br>
-                <center>
-                <div class="form-group">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fuel_modal" id="submit_fuel_button" style="min-width:150px; margin-top: 10px;">Submit</button> 
-                </div>
-                </center>
+
             </form> 
         </form> 
     </div>                

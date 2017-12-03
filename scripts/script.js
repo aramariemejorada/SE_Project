@@ -1,10 +1,8 @@
 $(document).ready(function(){
   function addError(ID){
     $('#' + ID).addClass('has-error');
-    $('#' + ID).append('<br><p id="error" style="color:red">Error in fields.</p>') ;
     setTimeout(function(){
                 $('#' + ID).removeClass('has-error');
-                $('#error').remove('#error');
         }, 3000);
   }
   function formatDate(date1,date2) {
@@ -89,55 +87,63 @@ $(document).ready(function(){
     return Math.abs(f.toFixed(3));
   }
   $("#login_button").click(function(){
-      console.log($("#user").prop('value'));
-      console.log($("#password").prop('value'));
-      $.ajax({
-         url: "includes/login.inc.php",
-         type: "POST",
-         data:{
-             id: $("#user").prop('value'),
-             pass : $("#password").prop('value')
-         },
-         success: function (data) {
-              if(data == 2){
-                  window.location = 'driver.php';
-              }else if(data == 1){
-                  window.location = 'admin.php';
-              }else{
-                  addError("login");
-              }
-         },
-         error: function(jqXHR, textStatus, errorThrown) {
-              console.log(textStatus, errorThrown);
-         }  
-     }); 
-  });
+    console.log($("#user").prop('value'));
+    console.log($("#password").prop('value'));
+    $.ajax({
+       url: "includes/login.inc.php",
+       type: "POST",
+       data:{
+           id: $("#user").prop('value'),
+           pass : $("#password").prop('value')
+       },
+       success: function (data) {
+            if(data == 2){
+                window.location = 'driver.php';
+            }else if(data == 1){
+                window.location = 'admin.php';
+            }else{
+                addError("login");
+            }
+       },
+       error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+       }  
+    });
+  }); 
   $("#signup_button").click(function(){
-      var radioValue = $("input[name='optradio']:checked").val();
-      console.log($("#passw").prop('value'));
-      console.log($("#passwordcon").prop('value'));
-      $.ajax({
-         url: "includes/signup.inc.php",
-         type: "POST",
-         data:{
-             firstname: $("#firstName").prop('value'),
-             lastname : $("#lastName").prop('value'),
-             middlename: $("#middleName").prop('value'),
-             empid: $("#empid").prop('value'),
-             passw: $("#passw").prop('value'),
-             passwordcon: $("#passwordcon").prop('value'),
-             role : radioValue
-         },
-         success: function (data) {
-              console.log(data);
-              if(data == 1){
-                  window.location = 'index.php';
-              }
-         },
-         error: function(jqXHR, textStatus, errorThrown) {
-              console.log(textStatus, errorThrown);
-         }  
-     }); 
+    var radioValue = $("input[name='optradio']:checked").val();
+    console.log($("#passw").prop('value'));
+    console.log($("#passwordcon").prop('value'));
+    $.ajax({
+       url: "includes/signup.inc.php",
+       type: "POST",
+       data:{
+           firstname: $("#firstName").prop('value'),
+           lastname : $("#lastName").prop('value'),
+           middlename: $("#middleName").prop('value'),
+           empid: $("#empid").prop('value'),
+           passw: $("#passw").prop('value'),
+           passwordcon: $("#passwordcon").prop('value'),
+           role : radioValue
+       },
+       success: function (data) {
+            console.log(data);
+            if(data == 1){
+              alert("Sign-up success.");
+              window.location = 'index.php';
+            }else if(data == -3){
+              alert("Passwords do not match");
+            }else if(data == -4){
+              alert("Username taken");
+            }
+            else{
+              alert('Error in fields');
+            }
+       },
+       error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+       }  
+    }); 
   });
   $('#newVehicle').click(function(){
     if($("#vehicleName").prop('value')==""|| $("#licensePlate").prop('value')=="" ||
@@ -158,6 +164,9 @@ $(document).ready(function(){
               console.log(data);
               if(data==1){
                 alert("Added a new vehicle.");
+                window.location = 'admin.php';
+              }else{
+                alert("Add failed.");
                 window.location = 'admin.php';
               }
           },
@@ -190,6 +199,35 @@ $(document).ready(function(){
             if(data ==1){
               alert("Vehicle edited");
               window.location = "admin.php";
+            }else{
+              alert("Edit error.");
+              window.location = "admin.php";
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+          }  
+      }); 
+    }
+  });
+  $(document).on("click", ".removeUser", function(event) {
+    var a = $(this).val();
+    console.log(a)
+    if(confirm("Do you really want to delete this user")==true){
+       $.ajax({
+          url: "includes/deleteUser.php",
+          type: "POST",
+          data:{
+            id : a
+          },
+          success: function (data) {
+            console.log(data);
+            if(data ==1){
+              alert("User deleted.");
+              window.location = "admin.php";
+            }else{
+              alert("Deletion failed.");
+              window.location = "admin.php";
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
@@ -221,7 +259,17 @@ $(document).ready(function(){
       }); 
     }
   });
-
+  $('#print').click(function(){
+    window.print ($())
+  });
+  $('#exportVT').click(function(e){
+    window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#VT').html()));
+    e.preventDefault();
+  });
+  $('#exportTVT').click(function(e){
+    window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#tvt').html()));
+    e.preventDefault();
+  });
   $('#show_before_modal').click(function(){
       var date1 = $("#beforeDate1").prop('value');
       var date2 = $("#beforeDate2").prop('value'); 
@@ -231,8 +279,11 @@ $(document).ready(function(){
       $("#mod_pass").text($("#beforeDest").prop('value'));
       $("#mod_purp").text($("#beforePurp").prop('value'));
   });
-
-  $("#printTrip").click(function(){
+  $("#printTrip").click(function(e){
+    if($("#beforeDate1").prop('value')== "" || $("#beforeDate2").prop('value')== ""|| $("#beforePlateNo").prop('value')== 0|| 
+      $("#beforePass").prop('value')== ""|| $("#beforeDest").prop('value')== ""|| $("#beforePurp").prop('value')== ""){
+      alert("Some fields are empty.");
+    }else{
       var date1 = new Date($("#beforeDate1").prop('value'));
       var date2 = new Date($("#beforeDate2").prop('value'));
       var month1 = ["January", "February", "March", "April", "May", "June",
@@ -245,8 +296,9 @@ $(document).ready(function(){
           url: "includes/before.php",
           type: "POST",
           data:{
-              beforeDate1 : a,
-              beforeDate2 : b,
+              date : $('#mod_date').text(),
+              beginDate: $('#beforeDate1').prop('value'),
+              endDate : $('#beforeDate2').prop('value'),
               beforePlateNo : $("#beforePlateNo").prop('value'),
               beforePass : $("#beforePass").prop('value'),
               beforeDest : $("#beforeDest").prop('value'),
@@ -254,13 +306,19 @@ $(document).ready(function(){
           },
           success: function (data) {
               console.log(data);
-              window.open('before-print.php');
-              window.location = "driver.php";
+              if(data == 1){
+                window.open('before-print.php');
+                window.location = "driver.php";
+              }else{
+                alert('Error in fields. Please try again.');
+                window.location = "driver.php";
+              }
           },
           error: function(jqXHR, textStatus, errorThrown) {
               console.log(textStatus, errorThrown);
           }  
       });
+    }
   });
   var selectData;
   var selectData2;
@@ -327,31 +385,41 @@ $(document).ready(function(){
     getGasUsed();
   });
   $('#printFuel').click(function(){
-    $.ajax({
-        url: "includes/fuel.php",
-        type: "POST",
-        data:{
-           tt_date : $('#select-type2').prop('value'),
-           balance : parseFloat($("#mod_bal").text()),
-           purchased : parseFloat($("#mod_purch").text()),
-           issuedStock : parseFloat($("#mod_stock").text()),
-           gasUsed : parseFloat($("#mod_gas").text()),
-           distance : parseFloat($("#mod_km").text()),
-           gearOil : parseFloat($("#mod_gear").text()),
-           lubeOil : parseFloat($("#mod_lube").text()),
-           grease : parseFloat($("#mod_grease").text()),
-           remarks : $("#remarks").val(),
-           ten_percent : (parseFloat($("#mod_gas").text())*.10),
-           final_bal : parseFloat($("#mod_fin").text())
-        },
-        success: function (data) {
-            console.log(data);
-            window.location = "driver.php";
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-        }  
-    });
+    if($('#select-type2').prop('value')=="" ||parseFloat($("#mod_km").text())=="" || parseFloat($("#mod_fin").text())==""){
+      alert("Some fields are empty.");
+    }else{
+      $.ajax({
+          url: "includes/fuel.php",
+          type: "POST",
+          data:{
+             tt_date : $('#select-type2').prop('value'),
+             balance : parseFloat($("#mod_bal").text()),
+             purchased : parseFloat($("#mod_purch").text()),
+             issuedStock : parseFloat($("#mod_stock").text()),
+             gasUsed : parseFloat($("#mod_gas").text()),
+             distance : parseFloat($("#mod_km").text()),
+             gearOil : parseFloat($("#mod_gear").text()),
+             lubeOil : parseFloat($("#mod_lube").text()),
+             grease : parseFloat($("#mod_grease").text()),
+             remarks : $("#remarks").val(),
+             ten_percent : (parseFloat($("#mod_gas").text())*.10),
+             final_bal : parseFloat($("#mod_fin").text())
+          },
+          success: function (data) {
+              console.log(data);
+              if(data ==1){
+                alert('Success');
+                window.location = "driver.php";
+              }else{
+                alert('Error in fields.');
+                console.log(data);
+              }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+          }  
+      });
+    }
   });
   $('#submit_fuel_button').click(function(){
     $("#mod_bal").text($("#balance").prop('value'));
@@ -364,4 +432,41 @@ $(document).ready(function(){
     $("#mod_grease").text($("#grease").prop('value'));
     $("#mod_fin").text(getFinal());
   });
+  $('#searchYear').click(function(){
+    console.log( $('#year option:selected').val())
+    $.ajax({
+        url: "includes/displayYearSearch.php",
+        type: "POST",
+        data:{
+          search_year : $('#year option:selected').val()
+        },
+        success: function (data) {
+          $('#tableData').html(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }  
+    });
+  });
+    $('#searchMonthYear').click(function(){
+      console.log( $('#month_1 option:selected').val())
+      console.log( $('#month_2 option:selected').val())
+      console.log( $('#year_2 option:selected').val())
+      $.ajax({
+          url: "includes/displayYearMonthSearch.php",
+          type: "POST",
+          data:{
+            month_1 : $('#month_1 option:selected').val(),
+            month_2 : $('#month_2 option:selected').val(),
+            search_year : $('#year_2 option:selected').val()
+          },
+          success: function (data) {
+            console.log(data);
+            $('#VT').html(data);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+          }  
+      });
+    });
 });

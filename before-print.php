@@ -1,10 +1,13 @@
 <?php
+	include_once 'includes/dbh.inc.php';
 	session_start();
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	<title></title>
 	<style type="text/css">
 		hr,p{
@@ -17,13 +20,10 @@
 		th{
 			padding: 5px;
 		}
-		td{
-			/*visibility: hidden;*/
-		}
 	</style>
 </head>
 <body>
-	<div style="width: 8.5in; height: 11in; font-family: sans-serif;">
+	<div id style="width: 8.5in; height: 11in; font-family: sans-serif;">
 		<center>
 			Republic of the Philippines<br>
 			<b>Department of Information and Communications Technology</b><br>
@@ -37,27 +37,26 @@
 				<li style="list-style: none;margin: 0 2in;">3: Duplicate to Administration Division for metre control.</li>
 			</ul>
 		</span>
-		<?php
-		include_once 'includes/dbh.inc.php';
+		<div id="abc">
+			<?php
+			include_once 'includes/dbh.inc.php';
+			$show_travel= 'SELECT trip_ticket.trip_ticket_date,employee.firstname,employee.lastname,trip_ticket.passenger,vehicle.license_plate,trip_ticket.destination,trip_ticket.purpose, vehicle.balance_in_tank FROM `trip_ticket` inner join vehicle on trip_ticket.license_plate=vehicle.license_plate inner join employee on trip_ticket.emp_id=employee.emp_id order by trip_ticket_id asc';
+			$html = "";
+			$show_travel_query = mysqli_query($conn,$show_travel);
+			while($row = mysqli_fetch_assoc($show_travel_query)){
+				$balance = $row['balance_in_tank'];
+				$driver = ucwords($row['firstname'])." ".ucwords($row['lastname']);
+				$html= '<span style="margin-right:1.45in;"><b>DRIVER:</b></span><span class="d_driver_name">'.$driver.'</span><hr>';
+				$html.= '<span style="margin-right:1.65in;"><b>DATE:</b></span><span id="d_date">'.$row['trip_ticket_date'].'</span><hr>';
+				$html.= '<span style="margin-right:0.35in;"><b>Authorized Passenger:</b></span><span id="d_auth_pass">'.$row['passenger'].'</span><hr>';
+				$html.= '<span style="margin-right:0.88in;"><b>VEHICLE USED:</b></span><span id="d_vehicle">'.$row['license_plate'].'</span><hr>';
+				$html.= '<span style="margin-right:1.1in;"><b>Destinations:</b></span><span id="d_dest">'.$row['destination'].'</span><hr>';
+				$html.= '<span style="margin-right:1.4in;"><b>Purpose:	</b></span><span id="d_purp" style="font-size:12px;">'.$row['purpose'].'</span><hr>';
+			}
 
-		$sql = 'SELECT trip_ticket.trip_ticket_date,employee.firstname,employee.lastname,trip_ticket.passenger,trip_ticket.license_plate,trip_ticket.destination,trip_ticket.purpose FROM `trip_ticket` join employee on employee.emp_id=trip_ticket.emp_id where employee.emp_id="'.$_SESSION['u_id'].'"limit 1';
-		$name;
-		$result = mysqli_query($conn, $sql);
-		if (mysqli_num_rows($result) > 0) {
-		    // output data of each row
-		    while($row = mysqli_fetch_assoc($result)) {
-		    	$name = $row['firstname']." ".$row['lastname'];
-		       	echo '<span style="margin-right:1.65in;"><b>DATE:</b></span><span id="date">'.$row['trip_ticket_date'].'</span><hr>';
-		       	echo '<span style="margin-right:1.45in;"><b>DRIVER:</b></span><span id="driver_name">'.ucfirst($row['firstname'])." ".ucfirst($row['lastname']).'</span><hr>';
-		       	echo '<span style="margin-right:0.35in;"><b>Authorized Passenger:</b></span><span id="auth_pass">'.$row['passenger'].'</span><hr>';
-		       	echo '<span style="margin-right:0.88in;"><b>VEHICLE USED:</b></span><span id="vehicle">'.$row['license_plate'].'</span><hr>';
-		       	echo '<span style="margin-right:1.1in;"><b>Destinations:</b></span><span id="dest">'.$row['destination'].'</span><hr>';
-		       	echo '<span style="margin-right:1.4in;"><b>Purpose:	</b></span><span id="purp" style="font-size:12px;">'.$row['purpose'].'</span><hr>';
-		    }
-		} else {
-		    echo "0 results";
-		}
-		?>
+			echo $html;
+			?>
+		</div>
 		<div style="margin: 0.3in 0.3in">
 			<div style="width: 50%;float: left;">
 				<p>Approved by:</p><br>
@@ -104,24 +103,24 @@
 		</div>
 		<div style="margin: 0.3in 0">
 			<div style="width: 50%;float: left;">
-				<span>Balance in Tank:<span></span></span><br>
-				<span>Issued from Stock:<span></span></span><br>
-				<span>Purchase Outside:<span></span></span><br>
-				<span>Gasoline Used:<span></span></span><br>
-				<span>Final Balance:<span></span></span><br>
+				<span>Balance in Tank:<span id="d_balance">&nbsp&nbsp<b><?php echo $balance ?></b><span style="margin-left: 1in">ltrs.</span></span></span><br>
+				<span>Issued from Stock:<span><span style="margin-left: 1.44in">ltrs.</span></span></span><br>
+				<span>Purchase Outside:<span><span style="margin-left: 1.44in">ltrs.</span></span></span><br>
+				<span>Gasoline Used:<span><span style="margin-left: 1.67in">ltrs.</span></span></span><br>
+				<span>Final Balance:<span><span style="margin-left: 1.75in">ltrs.</span></span></span><br>
 			</div>
 			<div style="width: 50%;float: left;">
-				<span>Total kms travelled:<span></span></span><br>
-				<span>Gear oil used:<span></span></span><br>
-				<span>Lubrican oil used:<span></span></span><br>
-				<span>Grease used/issued:<span></span></span><br>
+				<span>Total kms travelled:<span><span style="margin-left: 2in">ltrs.</span></span></span><br>
+				<span>Gear oil used:<span></span><span style="margin-left: 2.39in">ltrs.</span></span><br>
+				<span>Lubrican oil used:<span><span style="margin-left: 2.12in">ltrs.</span></span></span><br>
+				<span>Grease used/issued:<span><span style="margin-left: 1.90in">ltrs.</span></span></span><br>
 				<span>CERTIFIED CORRECT<span></span></span><br>
 			</div>
 		</div>
 		<div style="width: 100%; float: left; margin-top: 0.3in;">
 			<div style="width: 50%;float: right;">
 				<div>
-					<p><u><b><?php echo ucwords($name); ?></b></u></p>
+					<p><u><b><span class="d_driver_name"><?php echo $driver?></b></u></p>
 					<p style="margin-left:20px">Driver</p>
 				</div>
 			</div>
@@ -146,6 +145,7 @@
 		</div>
 		
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="scripts/script.js"></script>
 </body>
 </html>

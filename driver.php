@@ -19,28 +19,29 @@
             <ul class="nav nav-tabs" style="margin-left: 10px">
                 <li class="active"><a data-toggle="tab" href="#before">Approval</a></li>
                 <li><a data-toggle="tab" href="#after">Fuel Consumption</a></li>
+                <li><a data-toggle="tab" href="#tripTick">Trip Ticket</a></li>
             </ul>
-            <div class="tab-content">
-                <div id="before" class="tab-pane fade in active">
-                    <div id="tabs" class="tab-content container" style="border-radius: 5px">
-                        <div id="view" class="tab-pane fade in active">
-                            <?php include 'includes\beforeForm.php' ?>
-                            <center>
-                                <div class="form-group">
-                                    <button type="button" id="show_before_modal" class="btn btn-primary" name="submit" data-toggle="modal" data-target="#trip" style="min-width:150px; margin-top: 10px;">Submit</button> 
-                                </div>
-                            </center>
-                        </div>
+        </div>
+        <div>
+           <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="before" style="border-radius: 5px; background-color: white;margin: 0 20px;">
+                    <div class="container bordered tabs" >
+                        <?php include 'includes/beforeForm.php' ?>
                     </div>
                 </div>
-                <div id="after" class="tab-pane fade">
-                    <?php include 'includes\afterForm.php' ?>     
+               <div role="tabpanel" class="tab-pane fade" id="tripTick" style="border-radius: 5px; background-color: white;margin: 0 20px;">
+                    <div class="container bordered tabs" >
+                        <?php include 'includes/driverTable.php' ?>
+                    </div>
                 </div>
-                <div id="fuelConsumption" class="tab-pane fade">
-                    <?php include 'includes\fuelConsumption.php' ?>     
-                </div>
-            </div> 
+                <div role="tabpanel" class="tab-pane fade" id="after" style="border-radius: 5px; background-color: white;margin: 0 20px;">
+                     <div class="container bordered tabs" >
+                         <?php include 'includes/afterForm.php' ?>
+                     </div>
+                 </div>
+           </div> 
         </div>
+
         <?php include 'includes\help.php' ?>      
         <div id="trip" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
             <div class="modal-dialog modal-lg" role="document" style="max-width: 500px">
@@ -65,5 +66,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="scripts/script.js"></script>
+
     </body>
 </html>

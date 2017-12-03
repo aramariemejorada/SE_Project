@@ -13,16 +13,13 @@
             <h2>Monthly Report</h2>
             <!-- <h4>Nissan GTX 1050 | Driver(s): xxxxx,xxxxx option: will be shown after search -->
             <span class="logout">
-                <?php include 'includes\monthPicker.php' ?>
+                <?php include 'includes\monthPicker.php' ?><br>
+                <button type="button" id="searchMonthYear" class="btn btn-primary logout" style="margin: 0;min-width: 150px;">Search</button>
+                <button type="button" id="exportVT" class="btn btn-success logout" style="margin: 0;min-width: 50px;">Export</button>
             </span></h4>
             <hr>
-            <div class="container table-responsive" style="padding-left: 0">
+            <div id="VT" class="container table-responsive" style="padding-left: 0">
                     <?php include 'includes\vehicleTable.php' ?>
-                    <center>
-                        <form action="includes/excel.php" method="post">
-                            <input type="submit" name="export_excel"></button>
-                        </form>
-                    </center>
             </div>
 
         </div>

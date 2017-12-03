@@ -59,5 +59,11 @@
             <textarea cols="60" class="form-control input-id" id="beforePurp" placeholder="Enter text here."></textarea>
         </div> 
         </span> 
-    </form> '
+    </form> 
+    <center>
+        <div class="form-group">
+            <button type="button" id="show_before_modal" class="btn btn-primary" name="submit" data-toggle="modal" data-target="#trip" style="min-width:150px; margin-top: 10px;">Submit</button> 
+        </div>
+    </center>'
+
 ?>

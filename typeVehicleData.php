@@ -13,29 +13,22 @@
             <h2>Yearly Report</h2>
             <!-- <h4>Nissan GTX 1050 | License Plate No: GSR-541 option: will be shown after search -->
             <span class="logout">
-            <div class="form-group" style="display: inline-block">
-                <select class="form-control" id="year">
-                    <option default>---Select Year---</option>
-                    <option value="1">2018</option>
-                    <option value="2">2019</option>
-                    <option value="3">2020</option>
-                    <option value="4">2021</option>
-                    <option value="5">2022</option>
-                    <option value="6">2023</option>
-                    <option value="7">2024</option>
-                    <option value="8">2025</option>
-                    <option value="9">2026</option>
-                    <option value="10">2027</option>
-                    <option value="11">2028</option>
-                    <option value="12">2029</option>
+            <div class="form-group">
+                <select class="form-control" id="year" name="year" required="required">
+                <option value = "0">None</option>
+                <option value = "2017">2017</option>
+                <option value = "2018">2018</option>
+                <option value = "2019">2019</option>
+                <option value = "2020">2020</option>
                 </select>
+                <button type="button" id="searchYear" class="btn btn-primary logout" style="margin: 0;min-width: 150px;">Search</button>
+                <button type="button" id="exportTVT" class="btn btn-success logout" style="margin: 0;min-width: 50px;">Export</button>
             </div>
+
             </span></h4>
             <hr>
-            <div clas="container table-responsive" style="padding-left: 0">
-                <table id="table" class="table table-hover">
-                    <?php include 'includes\typeVehicleTable.php' ?>
-                </table>
+            <div id="tvt" clas="container table-responsive" style="padding-left: 0">
+                <?php include 'includes\typeVehicleTable.php' ?>
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -33,9 +33,6 @@
 	        {
 	        	$plate = $row['license_plate'];
 	            $new = "UPDATE vehicle set balance_in_tank = '$fin_bal' where license_plate='$plate'";
-	            if(mysqli_query($conn,$new)){
-	            	echo "update success!";
-	            }
 	            
 	        }
 	    }

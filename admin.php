@@ -22,21 +22,9 @@ session_start();
             <li><a data-toggle="tab" href="#driver">Driver</a></li>
         </ul>
         <div class="tab-content">
-            <div id="tripTick" class="tab-pane fade in active">
-                <div id="tabs" class="tab-content container" style="border-radius: 5px">
-                    <div id="view" class="tab-pane fade in active">
-                        <?php include 'includes\searchbar.php' ?>
-                        <?php include 'driverData.php' ?>
-                    </div>
-                </div>
-            </div>
             <div id="travelReport" class="tab-pane fade">
                 <div id="tabs" class="tab-content container" style="border-radius: 5px">
                     <div id="view" class="tab-pane fade in active">
-                        <?php include 'includes\searchbar.php' ?>
-                        <span class="logout">
-                            <button type="submit" class="btn btn-primary" name="print">Print</button>
-                        </span>
                         <?php include 'vehicleData.php' ?>
                     </div>
                 </div>    
@@ -44,10 +32,6 @@ session_start();
             <div id="fuelConsumption" class="tab-pane fade">
                 <div id="tabs" class="tab-content container" style="border-radius: 5px">
                     <div id="view" class="tab-pane fade in active">
-                        <?php include 'includes\searchbar.php' ?>
-                        <span class="logout">
-                            <button type="submit" class="btn btn-primary" name="print">Print</button>
-                        </span>
                         <?php include 'typeVehicleData.php' ?>
                     </div>
                 </div>       

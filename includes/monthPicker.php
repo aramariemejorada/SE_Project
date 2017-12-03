@@ -1,6 +1,6 @@
 <?php 
     echo '<div class="form-group" style="display: inline-block">
-        <select class="form-control" id="sel1">
+        <select class="form-control" id="month_1">
             <option default>---Select Month---</option>
             <option value="1">January</option>
             <option value="2">February</option>
@@ -18,7 +18,7 @@
     </div>
     —
     <div class="form-group" style="display: inline-block">
-        <select class="form-control" id="sel1">
+        <select class="form-control" id="month_2">
             <option default>---Select Month---</option>
             <option value="1">January</option>
             <option value="2">February</option>
@@ -35,20 +35,12 @@
         </select>
     </div>
     <div class="form-group" style="display: inline-block">
-    <select class="form-control" id="year">
+    <select class="form-control" id="year_2">
         <option default>---Select Year---</option>
-        <option value="1">2018</option>
-        <option value="2">2019</option>
-        <option value="3">2020</option>
-        <option value="4">2021</option>
-        <option value="5">2022</option>
-        <option value="6">2023</option>
-        <option value="7">2024</option>
-        <option value="8">2025</option>
-        <option value="9">2026</option>
-        <option value="10">2027</option>
-        <option value="11">2028</option>
-        <option value="12">2029</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2029">2029</option>
+        <option value="2020">2020</option>
     </select>
 </div>'
 ?>
