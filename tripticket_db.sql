@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2017 at 05:47 AM
+-- Generation Time: Dec 03, 2017 at 06:58 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -66,7 +66,8 @@ CREATE TABLE `trip_info` (
 
 DROP TABLE IF EXISTS `trip_ticket`;
 CREATE TABLE `trip_ticket` (
-  `trip_ticket_date` varchar(70) NOT NULL,
+  `trip_ticket_id` int(11) NOT NULL,
+  `trip_ticket_date` varchar(70) DEFAULT NULL,
   `emp_id` varchar(11) DEFAULT NULL,
   `license_plate` varchar(11) DEFAULT NULL,
   `begin_date` date DEFAULT NULL,
@@ -125,7 +126,7 @@ ALTER TABLE `trip_info`
 -- Indexes for table `trip_ticket`
 --
 ALTER TABLE `trip_ticket`
-  ADD PRIMARY KEY (`trip_ticket_date`),
+  ADD PRIMARY KEY (`trip_ticket_id`),
   ADD KEY `FK` (`emp_id`,`license_plate`);
 
 --
@@ -134,7 +135,16 @@ ALTER TABLE `trip_ticket`
 ALTER TABLE `vehicle`
   ADD PRIMARY KEY (`license_plate`),
   ADD KEY `FK` (`normal_travel`);
-COMMIT;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `trip_ticket`
+--
+ALTER TABLE `trip_ticket`
+  MODIFY `trip_ticket_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
