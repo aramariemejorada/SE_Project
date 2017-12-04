@@ -15,14 +15,13 @@ session_start();
         <?php include 'includes\header.php' ?>
         <div class="container">
         <ul class="nav nav-tabs" style="margin-left: 10px">
-            <li class="active"><a data-toggle="tab" href="#tripTick">Trip Ticket</a></li>
-            <li><a data-toggle="tab" href="#travelReport">Official Travel Report</a></li>
+            <li class="active"><a data-toggle="tab" href="#travelReport">Official Travel Report</a></li>
             <li><a data-toggle="tab" href="#fuelConsumption">Fuel Consumption Report</a></li>
             <li><a data-toggle="tab" href="#vehicles">Vehicles</a></li>
             <li><a data-toggle="tab" href="#driver">Driver</a></li>
         </ul>
         <div class="tab-content">
-            <div id="travelReport" class="tab-pane fade">
+            <div id="travelReport" class="tab-pane fade  in active">
                 <div id="tabs" class="tab-content container" style="border-radius: 5px">
                     <div id="view" class="tab-pane fade in active">
                         <?php include 'vehicleData.php' ?>
@@ -55,6 +54,8 @@ session_start();
         <?php include 'includes\help.php' ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="scripts/jquery.min.js"></script>
+         <script src="scripts/bootstrap.min.js"></script>
         <script src="scripts/script.js"></script>
     </body>
 </html>

@@ -79,9 +79,9 @@ $(document).ready(function(){
     });
   }
   function getFinal(){
-    var a = parseFloat($('#balance').val());
-    var b = parseFloat($('#issuedStock').val());
-    var c = parseFloat($('#purchased').val());
+    var a = parseFloat($('#balance').val())+0;
+    var b = parseFloat($('#issuedStock').val())+0;
+    var c = parseFloat($('#purchased').val())+0;
     var d = a + b + c;
     var f = (d - $('#gasUsed').val());
     return Math.abs(f.toFixed(3));
@@ -129,7 +129,7 @@ $(document).ready(function(){
        success: function (data) {
             console.log(data);
             if(data == 1){
-              alert("Sign-up success.");
+              alert("Sign-up successful.");
               window.location = 'index.php';
             }else if(data == -3){
               alert("Passwords do not match");
@@ -162,13 +162,19 @@ $(document).ready(function(){
           },
           success: function (data) {
               console.log(data);
-              if(data==1){
+              if(data ==1){
                 alert("Added a new vehicle.");
                 window.location = 'admin.php';
               }else{
-                alert("Add failed.");
                 window.location = 'admin.php';
               }
+              // if(data==1){
+              //   alert("Added a new vehicle.");
+              //   window.location = 'admin.php';
+              // }else{
+              //   alert("Add failed.");
+              //   window.location = 'admin.php';
+              // }
           },
           error: function(jqXHR, textStatus, errorThrown) {
               console.log(textStatus, errorThrown);
@@ -197,7 +203,6 @@ $(document).ready(function(){
           success: function (data) {
             console.log(data);
             if(data ==1){
-              alert("Vehicle edited");
               window.location = "admin.php";
             }else{
               alert("Edit error.");
@@ -223,7 +228,6 @@ $(document).ready(function(){
           success: function (data) {
             console.log(data);
             if(data ==1){
-              alert("User deleted.");
               window.location = "admin.php";
             }else{
               alert("Deletion failed.");
@@ -238,6 +242,7 @@ $(document).ready(function(){
   });
   $(document).on("click", ".removeVehicle", function(event) {
     plate = $(this).val();
+    console.log(plate);
     if(confirm("Do you really want to delete this vehicle?")==true){
        $.ajax({
           url: "includes/modifyVehicle.php",
@@ -249,7 +254,6 @@ $(document).ready(function(){
           success: function (data) {
             console.log(data);
             if(data ==1){
-              alert("Vehicle deleted.");
               window.location = "admin.php";
             }
           },
@@ -407,12 +411,12 @@ $(document).ready(function(){
           },
           success: function (data) {
               console.log(data);
-              if(data ==1){
-                alert('Success');
-                window.location = "driver.php";
-              }else{
+              if(data ==-1){
                 alert('Error in fields.');
                 console.log(data);
+              }else{
+                alert('Success');
+                window.location = "driver.php";
               }
           },
           error: function(jqXHR, textStatus, errorThrown) {

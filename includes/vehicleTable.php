@@ -10,7 +10,7 @@
             <th>Distance Travelled (kms)</th>
             <th>Fuel Consumed (ltrs)</th>
             <th>Oil Used (ltrs)</th>
-            <th>Grease/B-Fluid/ATF used<th>
+            <th>Grease/B-Fluid/ATF used</th>
             <th>Remarks</th>
             </tr>
          </thead>';

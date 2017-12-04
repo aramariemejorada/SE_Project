@@ -14,7 +14,7 @@
 			//     echo -1;;
 			// }
 		if($newBalance != "" && $newTravel != ""){
-			$trip_info = 'UPDATE vehicle set balance_in_tank='.$newBalance.', normal_travel = '.$newTravel.' where license_plate="'.$id.'"';
+			$trip_info = 'UPDATE vehicle set balance_in_tank='.$newBalance.', normal_travel = '.$newTravel.' where license_plate ="'.$id.'"';
 
 			if (mysqli_query($conn, $trip_info)) {
 			    echo 1;
@@ -22,7 +22,7 @@
 			    echo -3;
 			}
 		}else if($newBalance != "" && $newTravel == ""){
-			$trip_info = 'UPDATE vehicle set balance_in_tank='.$newBalance.' where license_plate="'.$id.'"';
+			$trip_info = 'UPDATE vehicle set balance_in_tank='.$newBalance.' where license_plate ="'.$id.'"';
 
 			if (mysqli_query($conn, $trip_info)) {
 			    echo 1;
@@ -31,7 +31,7 @@
 			    echo $trip_info;
 			}
 		}else{
-			$trip_info = 'UPDATE vehicle set normal_travel = '.$newTravel.' where license_plate="'.$id.'"';
+			$trip_info = 'UPDATE vehicle set normal_travel = '.$newTravel.' where license_plate ="'.$id.'"';
 
 			if (mysqli_query($conn, $trip_info)) {
 			    echo 1;
@@ -41,7 +41,7 @@
 		}
 		
 	}else{
-		$trip_info = 'DELETE from vehicle where license_plate="'.$id.'"';
+		$trip_info = 'DELETE from vehicle where license_plate ="'.$id.'"';
 		if (mysqli_query($conn, $trip_info)) {
 		    echo 1;
 		} else {

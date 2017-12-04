@@ -23,14 +23,17 @@
             while($row = mysqli_fetch_assoc($show_vehicles_query))
             {
                 $id = $row["license_plate"];
+                $list = explode(" ", $id);
+                $a = $list[0];
+                $b = isset($list[1]) ? $list[1] : null;
                 $html.="<tr>
                 <td>".$id."</td>
                 <td>".$row["vehicle_type"]."</td>
                 <td>".$row["no_of_cylinder"]."</td>
                 <td>".$row["balance_in_tank"]."</td>
                 <td>".$row["normal_travel"]."</td>
-                <td><button class='modifyVehicle' data-toggle='modal' data-target='#editVehicle' value=$id>Edit</button></td>
-                <td><button class='removeVehicle' value=$id>Remove</button></td>
+                <td><button class='modifyVehicle' data-toggle='modal' data-target='#editVehicle' value='$a $b' >Edit</button></td>
+                <td><button class='removeVehicle' value='$a $b'>Remove</button></td>
                 </tr>";
             }
             $html.="</table>";

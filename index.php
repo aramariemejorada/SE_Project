@@ -29,7 +29,7 @@
                              <button type="button" id="login_button" class="btn btn-primary btn-block">Log In</button>
                         <div class="panel panel-default inquiry">
                             <div class="panel-body help-panel">
-                                Doesn't have an account? <a data-toggle="modal" data-target="#signup">Sign-up</a>
+                                No account yet? <a data-toggle="modal" data-target="#signup">Sign-up</a>
                             </div>
                             </div>
                        </div>
@@ -99,6 +99,8 @@
         <!-- end of modal -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="scripts/jquery.min.js"></script>
+         <script src="scripts/bootstrap.min.js"></script>
         <script src="scripts/script.js"></script>
     </body>
 </html>

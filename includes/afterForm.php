@@ -20,7 +20,7 @@
             <hr>
             <br>
             <form id="input" class="form-inline" style="padding:15px;">
-                <p style="font-weight: bold">Note: All fields are required.</p>
+                <p style="font-weight: bold">Note: All fields are required. Place zero (0) if none.</p>
                 <small class="form-text text-muted" style="display: block">
                     Trip Ticket Date                                
                 </small>
@@ -137,7 +137,7 @@
             <div class="form-group">
                 <center>
                     <div class="col-lg-12">
-                        <button type="button" id="printFuel" class="btn btn-primary">Print</a></button>
+                        <button type="button" id="printFuel" class="btn btn-primary">Submit</a></button>
                     </div>
                 </center>
             </div>
