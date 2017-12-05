@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2017 at 06:58 PM
+-- Generation Time: Dec 05, 2017 at 05:15 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -32,7 +32,7 @@ USE `tripticket_db`;
 
 DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
-  `emp_id` int(11) NOT NULL,
+  `emp_id` varchar(11) NOT NULL,
   `lastname` varchar(35) DEFAULT NULL,
   `firstname` varchar(35) DEFAULT NULL,
   `middlename` varchar(35) DEFAULT NULL,
@@ -135,16 +135,7 @@ ALTER TABLE `trip_ticket`
 ALTER TABLE `vehicle`
   ADD PRIMARY KEY (`license_plate`),
   ADD KEY `FK` (`normal_travel`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `trip_ticket`
---
-ALTER TABLE `trip_ticket`
-  MODIFY `trip_ticket_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
