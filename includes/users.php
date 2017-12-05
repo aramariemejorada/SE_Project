@@ -2,7 +2,7 @@
     <div class="container table-responsive" style="padding-left: 0">
                 <?php
             include_once 'dbh.inc.php';
-            $show_users= 'SELECT * from employee';
+            $show_users= 'SELECT * from employee where role = "Driver"';
             $show_users_query = mysqli_query($conn,$show_users);
             echo '
             <table id="table" class="table table-hover">
