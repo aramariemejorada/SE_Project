@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2017 at 05:15 AM
+-- Generation Time: Dec 09, 2017 at 05:11 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -135,7 +135,16 @@ ALTER TABLE `trip_ticket`
 ALTER TABLE `vehicle`
   ADD PRIMARY KEY (`license_plate`),
   ADD KEY `FK` (`normal_travel`);
-COMMIT;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `trip_ticket`
+--
+ALTER TABLE `trip_ticket`
+  MODIFY `trip_ticket_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
