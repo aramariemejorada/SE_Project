@@ -56,7 +56,9 @@ $(document).ready(function(){
   }
   function getGasUsed(){
     var gas;
-    var dis = getDistance();
+    // var dis = getDistance();
+    var dis = parseFloat($('#distance').val());
+    console.log(dis);
     $.ajax({
       url: "includes/balance.php",
       type: "POST",
@@ -182,6 +184,16 @@ $(document).ready(function(){
       });
     }
   });
+  var initial;
+  var final;
+  $('#s_odomReading').change(function(){
+    initial = $(this).val();
+    $('#distance').val(parseFloat(final)-parseFloat(initial));
+  });
+  $('#f_odomReading').change(function(){
+    final = $(this).val();
+    $('#distance').val(parseFloat(final)-parseFloat(initial));
+  });
   var plate;
   $(document).on("click", ".modifyVehicle", function(event) {
     plate = $(this).val();
@@ -263,9 +275,6 @@ $(document).ready(function(){
       }); 
     }
   });
-  $('#print').click(function(){
-    window.print ($())
-  });
   $('#exportVT').click(function(e){
     window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#VT').html()));
     e.preventDefault();
@@ -296,6 +305,7 @@ $(document).ready(function(){
       "July", "August", "September", "October", "November", "December"][date2.getMonth()];
       var a = ((month1) + ' ' + date1.getDate() + ', ' +  date1.getFullYear());
       var b = ((month2) + ' ' + date2.getDate() + ', ' +  date2.getFullYear());
+
       $.ajax({
           url: "includes/before.php",
           type: "POST",
@@ -364,7 +374,6 @@ $(document).ready(function(){
   $( "input[id='s_odomReading']").attr('value', "");
   $( "input[id='f_odomReading']").attr('value', "");
   $( "#after_info").hide();
-
   $( "#odomCheck" ).change(function(){
     if(this.checked){
       $( "#after-Form").trigger("reset");
@@ -385,9 +394,10 @@ $(document).ready(function(){
       $("#distance").val('');
     }
   });
-  $('#getGas').click(function(){
+  $('.test').change(function(){
     getGasUsed();
   });
+    
   $('#printFuel').click(function(){
     if($('#select-type2').prop('value')=="" ||parseFloat($("#mod_km").text())=="" || parseFloat($("#mod_fin").text())==""){
       alert("Some fields are empty.");
@@ -430,7 +440,7 @@ $(document).ready(function(){
     $("#mod_stock").text($("#issuedStock").prop('value'));
     $("#mod_purch").text($("#purchased").prop('value'));
     $("#mod_gas").text($("#gasUsed").prop('value'));
-    $("#mod_km").text(getDistance());
+    $("#mod_km").text($("#distance").prop('value'));
     $("#mod_gear").text($("#gearOil").prop('value'));
     $("#mod_lube").text($("#lubeOil").prop('value'));
     $("#mod_grease").text($("#grease").prop('value'));
@@ -467,6 +477,23 @@ $(document).ready(function(){
           success: function (data) {
             console.log(data);
             $('#VT').html(data);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+          }  
+      });
+    });
+    $(document).on("click", ".rePrint", function(event){
+      console.log($(this).val());
+      $.ajax({
+          url: "rePrint.php",
+          type: "POST",
+          data:{
+            data : $(this).val()
+          },
+          success: function (data) {
+            console.log(data);
+            window.open ('afterPrint.php');
           },
           error: function(jqXHR, textStatus, errorThrown) {
               console.log(textStatus, errorThrown);

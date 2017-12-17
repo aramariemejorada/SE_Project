@@ -20,10 +20,10 @@
 
 	$trip_info = "UPDATE trip_ticket set begin_balance='$balance', issued_from_stock='$issuedStock', purchase_outside='$purchased', 
 	 	gas_used='$gasUsed', end_balance='$fin_bal', total_kms_travelled='$distance', gear_oil_used='$gearOil', 
-		lubricant_oil_used='$lubeOil', grease_used='$grease',  remarks='$remarks', distance_travelled_per_ltr = '$total_liters', total_liters_consumed = '$ten_percent' where trip_ticket_date='$tt_date' and emp_id='$id'"; 
+		lubricant_oil_used='$lubeOil', grease_used='$grease',  remarks='$remarks', distance_travelled_per_ltr = '$total_liters', total_liters_consumed = '$ten_percent' where trip_ticket_id='$tt_date' and emp_id='$id'"; 
 
 	if (mysqli_query($conn, $trip_info)) {
-	    $getCar = 'SELECT license_plate FROM trip_ticket where trip_ticket_date ="'.$tt_date.'"';
+	    $getCar = 'SELECT license_plate FROM trip_ticket where trip_ticket_id ="'.$tt_date.'"';
 	    $getCar_query = mysqli_query($conn, $getCar);
 	   if(mysqli_num_rows($getCar_query)==0){
 	   		echo 1;

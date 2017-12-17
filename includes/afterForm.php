@@ -5,26 +5,9 @@
         <form id="after-form" class="form-inline" style="padding:15px;">
             <div class="form-group">
                 <small class="form-text text-muted" style="display: block">
-                    Initial Odometer Reading
-                </small>
-                <input type="number" class="form-control input-id" id="s_odomReading">
-                <small class="form-text text-muted" style="display: block">
-                    Final Odometer Reading
-                </small>
-                <input type="number" class="form-control input-id" id="f_odomReading"><br><br>
-                <input type="checkbox" id="odomCheck" checked>Manual Input (Check if odometer is out of order.)<br>
-                <div class="form-group">
-                    <button type="button" class="btn btn-primary" id="submit_after_button" style="min-width:50px; margin-top: 10px;">Submit</button> 
-                </div>
-            </div> 
-            <hr>
-            <br>
-            <form id="input" class="form-inline" style="padding:15px;">
-                <p style="font-weight: bold">Note: All fields are required. Place zero (0) if none.</p>
-                <small class="form-text text-muted" style="display: block">
                     Trip Ticket Date                                
                 </small>
-                <select class="form-control" style="width: 30%;" id="select-type2" required="required">
+                <select class="form-control" id="select-type2" required="required">
                 <option value = "0">None</option>';
                 <?php
                     $date = 'SELECT * FROM trip_ticket where end_balance is NULL and emp_id='.$_SESSION['u_id'];
@@ -35,47 +18,61 @@
                     }else{
                         while($row = mysqli_fetch_assoc($date_query))
                         {
-                            $option .= '<option value = "'.$row['trip_ticket_date'].'">'.$row['trip_ticket_date'].'</option>';
+                            $option .= '<option value = "'.$row['trip_ticket_id'].'">'.$row['trip_ticket_date'].'</option>';
                             
                         }
                     }
                     echo $option;
                     ?>
                 </select>
+                <small class="form-text text-muted" style="display: block">
+                    Initial Odometer Reading
+                </small>
+                <input type="number" class="test form-control input-id" id="s_odomReading">
+                <small class="form-text text-muted" style="display: block">
+                    Final Odometer Reading
+                </small>
+                <input type="number" class="test form-control input-id" id="f_odomReading"><br><br>
+                <input type="checkbox" id="odomCheck" checked>Manual Input (Check if odometer is out of order.)<br>
+                <!-- <div class="form-group">
+                    <button type="button" class="btn btn-primary" id="submit_after_button" style="min-width:50px; margin-top: 10px;">Submit</button> 
+                </div> -->
+            </div> 
+            <hr>
+            <br>
+            <form id="input" class="form-inline" style="padding:15px;">
+                <p style="font-weight: bold">Note: All fields are required. Place zero (0) if none.</p>
                 <h3>Fuel Consumption</h3>
                 <div class="form-group">
                     <small class="form-text text-muted" style="display: block">
                         Balance in Tank
                     </small>  
-                    <input type="number" class="form-control input-id" id="balance" readonly="readonly">        
+                    <input type="number" class="test form-control input-id" id="balance" readonly="readonly">        
                 </div>
                 <span>
                     <div class="form-group">
                         <small class="form-text text-muted" style="display: block">
                             Purchased Fuel Outside                                
                         </small>
-                        <input type="number" class="form-control input-id" id="purchased">
+                        <input type="number" class="test form-control input-id" id="purchased">
                     </div>
                     <div class="form-group">
                         <small class="form-text text-muted" style="display: block">
                             Issued from stock                             
                         </small>
-                        <input type="number" class="form-control input-id" id="issuedStock">
+                        <input type="number" class="test form-control input-id" id="issuedStock">
                     </div>
                     <div class="form-group">
-                        <small class="form-text text-muted" style="display: block">
+                        <small class="test form-text text-muted" style="display: block">
                             Distance Travelled                               
                         </small>
-                        <input type="number" value="" class="form-control input-id" id="distance">
+                        <input type="number" value="" class="test form-control input-id" id="distance">
                     </div>
                     <div class="form-group">
                         <small class="form-text text-muted" style="display: block">
                             Gasoline Used                              
                         </small>
                         <input type="number" value="" class="form-control input-id" id="gasUsed" readonly="readonly">
-                        <div class="form-group">
-                            <button type="button" class="btn btn-primary" id="getGas"">Total</button> 
-                        </div>
                     </div>
                 </span><br>
                 <hr>
