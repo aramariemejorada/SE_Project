@@ -67,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <small class="form-text text-muted" style="display: block">
-                        Normal travel (kms/ltr)
+                        Consumption (Normal travel) kms/ltr
                     </small>
                     <input type="number" class="form-control input-id" id="normalTravel">
                 </div>
@@ -91,13 +91,13 @@
             <div class="container-fluid">
                 <div class="form-group">
                     <small class="form-text text-muted" style="display: block">
-                        Balance in Tank
+                        Fuel Balance in Tank
                     </small>
                     <input type="number" class="form-control input-id" id="newBalance">
                 </div>
                 <div class="form-group">
                     <small class="form-text text-muted" style="display: block">
-                        Normal Travel (km/ltr)
+                        Consumption (Normal travel) kms/ltr
                     </small>
                     <input type="number" class="form-control input-id" id="newTravel">
                 </div>
