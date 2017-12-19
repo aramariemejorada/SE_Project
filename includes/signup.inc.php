@@ -9,7 +9,7 @@ $middleName = mysqli_real_escape_string($conn, $_POST['middlename']);
 $empid = mysqli_real_escape_string($conn, $_POST['empid']);
 $passw = mysqli_real_escape_string($conn, $_POST['passw']);
 $passwordcon = mysqli_real_escape_string($conn, $_POST['passwordcon']);
-$role = $_POST['role'];
+$role = 'mysqli_real_escape_string($conn, $_POST['role']);'
 
 if($passw === $passwordcon){
 	$pass = $passw;

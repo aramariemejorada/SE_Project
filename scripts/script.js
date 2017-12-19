@@ -29,7 +29,9 @@ $(document).ready(function(){
                  window.location = 'driver.php';
              }else if(data == 1){
                  window.location = 'admin.php';
-             }else{
+             }else if(data == 3){
+                window.location = 'super-admin.php';
+            }else{
                  console.log('error');
              }
         },
@@ -103,7 +105,9 @@ $(document).ready(function(){
                 window.location = 'driver.php';
             }else if(data == 1){
                 window.location = 'admin.php';
-            }else{
+            }else if(data == 3){
+                window.location = 'super-admin.php';
+             }else{
                 addError("login");
             }
        },
