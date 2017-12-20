@@ -12,8 +12,9 @@ session_start();
     </head>
     <body>
         <?php include 'includes\header.php' ?>
+        <form action = "includes\approve-user.php" method = "POST">
         <div class="container" style="background-color: white; padding: 20px; border-radius: 5px">
-        <input type="checkbox" id="select-all" style="margin-left: 7px"> Select All | <a href=#>Approve</a> | <a href=#>Delete</a>
+        <input type="checkbox" name = "radio" style="margin-left: 7px"> Select All | <input type="submit" name="approve" id ="app-del" value="Approve" /> | <input type="submit" name="delete" id="app-del" value="Delete" />
             <div class="table-responsive">
             	<?php
             	include_once 'includes\dbh.inc.php';
@@ -36,7 +37,7 @@ session_start();
            				     $id = $row["emp_id"];
                   				echo"
                   				<tr>
-                                <td><input type='checkbox' style='margin: 0'></td>
+                                <td><input type='checkbox' name='check[]' style='margin: 0' value='$id'></td>
                                 <td>".ucwords($row["firstname"])." ".ucwords($row["middlename"])." ".ucwords($row["lastname"])."</td>
                                 <td>".$row["emp_id"]."</td>
                                 <td>".$row["role"]."</td>
