@@ -9,7 +9,7 @@ $middleName = mysqli_real_escape_string($conn, $_POST['middlename']);
 $empid = mysqli_real_escape_string($conn, $_POST['empid']);
 $passw = mysqli_real_escape_string($conn, $_POST['passw']);
 $passwordcon = mysqli_real_escape_string($conn, $_POST['passwordcon']);
-$role = 'mysqli_real_escape_string($conn, $_POST['role']);'
+$role = mysqli_real_escape_string($conn, $_POST['role']);
 
 if($passw === $passwordcon){
 	$pass = $passw;
@@ -47,7 +47,7 @@ if (empty($firstName) || empty($lastName) || empty($middleName) || empty($empid)
 			}else{
 				$hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
 				//Insert the user to db
-				$sql = "INSERT INTO employee (emp_id, lastname, firstname, middlename, password, role) VALUES ('$empid','$lastName','$firstName','$middleName','$hashedPwd','$role')";	
+				$sql = "INSERT INTO employee (emp_id, lastname, firstname, middlename, password, role, status) VALUES ('$empid','$lastName','$firstName','$middleName','$hashedPwd','$role', 'UNVERIFIED')";	
 				mysqli_query($conn, $sql);
 				// header("Location: ../index.php?signup=success");
 				echo 1;

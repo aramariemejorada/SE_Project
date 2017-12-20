@@ -16,18 +16,18 @@ $pass = mysqli_real_escape_string($conn, $p);
         // header("Location: ../index.php?login=Empty Fields");
         // exit();   
     }else{
-       $sql = "SELECT * FROM employee WHERE emp_id ='$username' AND role = '$d'";
+       $sql = "SELECT * FROM employee WHERE emp_id ='$username' AND role = '$d' AND status ='VERIFIED'";
        $result = mysqli_query($conn, $sql); 
        $resultCheck = mysqli_num_rows($result);
 
             if ($resultCheck  < 1)  { 
                 
-                 $sql = "SELECT * FROM employee WHERE emp_id ='$username' AND role ='$a'";
+                 $sql = "SELECT * FROM employee WHERE emp_id ='$username' AND role ='$a' AND status ='VERIFIED'";
                  $result = mysqli_query($conn, $sql); 
                  $resultCheck = mysqli_num_rows($result);
 
                    if($resultCheck < 1){
-                            $sql = "SELECT * FROM employee WHERE emp_id ='$username' AND role ='$sa'";
+                            $sql = "SELECT * FROM employee WHERE emp_id ='$username' AND role ='$sa' AND status ='VERIFIED'";
                             $result = mysqli_query($conn, $sql); 
                             $resultCheck = mysqli_num_rows($result);
 
@@ -80,5 +80,5 @@ $pass = mysqli_real_escape_string($conn, $p);
                 }
               }
             }
-     } 
+          } 
 ?>
